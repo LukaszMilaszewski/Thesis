@@ -1,3 +1,7 @@
 \select@language {polish}
-\contentsline {chapter}{Indeks rzeczowy}{4}{section*.2}
-\contentsline {chapter}{Literatura}{5}{section*.4}
+\contentsline {chapter}{\chapternumberline {1}Cel projektu}{5}{chapter.1}
+\contentsline {chapter}{\chapternumberline {2}Robot minisumo}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Teoria}{6}{section.2.1}
+\contentsline {chapter}{\chapternumberline {3}Aplikacja mobilna}{7}{chapter.3}
+\contentsline {chapter}{Indeks rzeczowy}{8}{section*.2}
+\contentsline {chapter}{Literatura}{8}{section*.4}
