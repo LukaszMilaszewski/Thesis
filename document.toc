@@ -1,0 +1,3 @@
+\select@language {polish}
+\contentsline {chapter}{Indeks rzeczowy}{4}{section*.2}
+\contentsline {chapter}{Literatura}{5}{section*.4}
