@@ -298,6 +298,10 @@
 \newcommand\specjalnosc[1]{\renewcommand\@specjalnosc{#1}}
 \newcommand\@specjalnosc{}
 
+%Specjalność nowa linia
+\newcommand\specjalnoscline[1]{\renewcommand\@specjalnoscline{#1}}
+\newcommand\@specjalnoscline{}
+
 %Tytuł po angielsku
 \newcommand\titleEN[1]{\renewcommand\@titleEN{#1}}
 \newcommand\@titleEN{}
@@ -370,6 +374,7 @@
 \begin{tabular}{ll}
 KIERUNEK: & \@kierunek\\
 SPECJALNOŚĆ: & \@specjalnosc\\
+& \@specjalnoscline\\
 \end{tabular}\\[1.3cm]
 }
 
@@ -414,7 +419,8 @@ SPECJALNOŚĆ: & \@specjalnosc\\
 \uczelnia{POLITECHNIKA WROCŁAWSKA}
 \wydzial{WYDZIAŁ ELEKTRONIKI}
 \kierunek{AUTOMATYKA I ROBOTYKA (AIR)}
-\specjalnosc{TECHNOLOGIE INF. W SYS. AUTOMATYKI (ART)}
+\specjalnosc{TECHNOLOGIE INFORMACYJNE W SYSTEMACH}
+\specjalnoscline{AUTOMATYKI (ART)}
 \promotor{dr inż. Łukasz Jeleń}
 \date{WROCŁAW, 2017}
 
@@ -447,14 +453,6 @@ SPECJALNOŚĆ: & \@specjalnosc\\
 \begin{flushleft}
 \end{flushleft}
 
-
-
-%\newpage
-%\mbox{}\pdfbookmark[0]{Spis tabel}{spisTabel.1}
-%\listoftables*
-
-%\include{skroty} %skróty można sobie pominąć
-%
 \chapterstyle{default}
 \include{rozdzial01}
 \include{rozdzial02}
@@ -464,18 +462,12 @@ SPECJALNOŚĆ: & \@specjalnosc\\
 \include{rozdzial06}
 \include{rozdzial07}
 
-
 \bibliographystyle{plabbrv}
 
 %UWAGA: bibliotekę referencji należy przygotować samemu. Dobrym do tego narzędziem jest JabRef.
 
 %       Nazwę przygotowanej biblioteki wpisuje się poniżej bez rozszerzenia
 %       (w tym przypadku jest to "dokumentacja.bib")
-
-%\bibliography{dokumentacja}
-%\appendix
-%\include{dodatekA}
-%\include{dodatekB}
 
 \chapterstyle{noNumbered}
 \phantomsection % sets an anchor
@@ -493,9 +485,14 @@ SPECJALNOŚĆ: & \@specjalnosc\\
 	\emph{Zawody minisumo}
   \url{https://pl.wikipedia.org/wiki/Minisumo}
   (dostęp 09.11.2017).
-	
+  
+    			\bibitem{Forbot}
+	\emph{Kurs HAL}
+  \url{https://forbot.pl/blog/kurs-stm32-f4-1-czas-poznac-hal-spis-}
+  \url{tresci-kursu-id14114}  
+  (dostęp 09.11.2017).
+  	
 \end{thebibliography}
-
 
 \end{document}
 
