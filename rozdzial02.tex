@@ -36,8 +36,45 @@ Na rysunku ~\ref{fig:xcode} zilustrowano środowisko Xcode wraz z widokami aplik
 \end{figure}
 
 \subsection{UIKit}
+UIKit jest platformą, która zapewnia infrastrukturę dla aplikacji. Udostępnia  architekturę widoku do implementacji interfejsu, obsługę zdarzeń, obsługę wielopunktowego dotyku, zarządza zasobami oraz interakcjami pomiędzy aplikacją, a użytkownikiem. Dodatkowymi funkcjami są obsługa dokumentów, zarządzanie tekstem i wyświetlaniem, obsługę aplikacji oraz rozszerzeń aplikacji.
+
+\index{UIView} \subsubsection{\lstinline$UIView$}
+Widoki są podstawowymi elementami składowymi interfejsu użytkownika aplikacji, a klasa UIView definiuje zachowania wspólne dla wszystkich widoków. Obiekt widoku renderuje zawartość w obrębie prostokąta obwiedni i obsługuje wszelkie interakcje z tą zawartością. 
+
+\index{UITableView} \subsubsection{\lstinline$UITableView$}
+\textit{UITableView} wyświetla listę pozycji w pojedynczej kolumnie. Jest podklasą \textit{UIScrollView}, która pozwala użytkownikowi przewijać tabelę, z tą różnicą, że przewijanie dozwolone jest wyłącznie w pionie. Komórki zawierające poszczególne elementy tabeli są obiektami \textit{UITableViewCell}. \textit{UITableView} używa wspomnianych obiektów do rysowania widocznych wierszy tabeli. Komórki mogą posiadać tytuły treści, obrazy oraz widoków akcesoriów. Widoki akcesoriów mogą być również elementami sterującymi, takimi jak przełączniki i suwaki. 
+
 \subsection{CoreBluetooth}
+Platforma \textit{CoreBluetooth} dostarcza klasy niezbędne do komunikacji aplikacji z urządzeniami wyposażonymi w bezprzewodową technologię Bluetooth.
+
+\index{CBPeripheral} \subsubsection{\lstinline$CBPeripheral$}
+Klasa \textit{CBPeripheral} reprezentuje zdalne urządzenia peryferyjne, których połączenie  aplikacja wykrywa za pośrednictwem instancji \textit{CBCentralManager}. Urządzenia peryferyjne są identyfikowane za pomocą unikalnych identyfikatorów (UUID) reprezentowanych przez obiekty NSUUID. 
+
+\index{CBCentralManager} \subsubsection{\lstinline$CBCentralManager$}
+Obiekty \textit{CBCentralManager} służą do zarządzania podłączonymi urządzeniami peryferyjnymi (reprezentowanymi przez obiekty \textit{CBPeripheral}). Pozwalają na skanowanie oraz wykrywanie zdalnych urządzeń.
+
 \subsection{CoreGraphics}
-\subsection{CoreMotions}
+Platforma \textit{CoreGraphics} oparta jest na zaawansowanym mechanizmie rysowania \textit{Quartz}. Zapewnia niskopoziomowe renderowanie 2D, zarządzanie wzorcami, gradientami oraz danymi obrazu. Dodatkowo pozwala na tworzenie oraz maskowanie obrazu, a także wyświetlanie i analizowanie dokumentów PDF. W pracy dyplomowej \textit{CoreGrapics} zostało wykorzystane do stworzenia wirtualnego dżojstiku służącego zdalnemu sterowaniu robotem minisumo. 
+
+\subsection{CoreMotion}
+Dostarcza dane dotyczące ruchu urządzenia na podstawie wbudowanego akcelerometru, żyroskopu, krokomierza, magnetometru, barometru itp. W aplikacji użyto wspomnianej platformy do sterowania ruchem robota za pomocą żyroskopu.
 
 \section{Arduino}
+\textit{Arduino} jest platformą programistyczną przeznaczoną dla mikrokontrolerów z wbudowaną obsługą układów wejścia oraz wyjścia. Język programowania \textit{Arduino} oparty jest na języku C/C++. Głównym atutem omawianej platformy jest szeroka społeczność, dokładna dokumentacja oraz łatwość prototypowania prostych układów. Aczkolwiek nie jest zalecana w przypadku złożonych projektów ze względu na wysokopoziomowość oraz niestabilność pracy.
+
+Platforma została użyta do konfiguracji modułu Bluetooth za pomocą komend AT. Skonfigurowano takie parametry jak nazwa urządzenia oraz liczbę symboli na sekundę (\textit{baud rate}. Do tego celu użyto mikrokontrolera \textit{Arduino Mega 2560} oraz płytki stykowej wraz z przewodami połączeniowymi. Konfiguracja modułu była jednorazową czynnością, dlatego zdecydowano się na platformę \textit{Arduino} ze względu na wyżej wspomnianą szybkość oraz prostotę obsługi.
+  
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.75\linewidth]{pic02/arduino.JPG}
+	\caption{Układ służący do konfiguracji modułu bluetooth.}
+	\label{fig:arduino}	
+\end{figure}
+
+Na rysunku ~\ref{fig:arduino} zilustrowano układ Arduino Mega 2560 wraz z płytką stykową oraz podłączonym modułem bluetooth. Dodatkowo układ wyposażono w diodę mającą na celu sygnalizację poprawności wgrywania komend.
+ 
+
+
+
+ 
