@@ -17,12 +17,12 @@ Na rysunku ~\ref{fig:cubemx} zilustrowano konfigurację peryferiów użytego pro
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.75\linewidth]{pic02/cubemx.jpg}
-	\caption{Konfiguracja peryferiów użytego procesora STM32F100C8T6B - LQFP48.}
+	\caption{Konfiguracja peryferiów użytego procesora STM32F100C8T6B – LQFP48.}
 	\label{fig:cubemx}	
 \end{figure}
 
 \section{Swift}
-Swift jest językiem natywnym (następcą języka Objective-C) zaprezentowanym przez Apple Inc. w 2014 roku. Wykorzystywany jest do tworzenia oprogramowania na platformy macOS oraz iOS. W pracy dyplomowej użyto wersji języka 3.0, ponieważ była to najnowsza wersja wspierana przez docelowe urządzenie, którym był telefon iPhone 5.
+Swift jest językiem natywnym (następcą języka Objective–C) zaprezentowanym przez Apple Inc. w 2014 roku. Wykorzystywany jest do tworzenia oprogramowania na platformy macOS oraz iOS. W pracy dyplomowej użyto wersji języka 3.0, ponieważ była to najnowsza wersja wspierana przez docelowe urządzenie, którym był telefon iPhone 5.
 
 Środowiskiem użytym do tworzenia aplikacji mobilnej w technologii Swift był Xcode, którego dużym atutem jest występowanie graficznego interfejsu umożliwiającego tworzenie widoków aplikacji. Dzięki temu tworzenie aplikacji jest bardziej intuicyjne oraz pozwala na sprawne wprowadzanie zmian w tworzonych widokach.
 
@@ -36,7 +36,7 @@ Na rysunku ~\ref{fig:xcode} zilustrowano środowisko Xcode wraz z widokami aplik
 \end{figure}
 
 \subsection{UIKit}
-UIKit jest platformą, która zapewnia infrastrukturę dla aplikacji. Udostępnia  architekturę widoku do implementacji interfejsu, obsługę zdarzeń, obsługę wielopunktowego dotyku, zarządza zasobami oraz interakcjami pomiędzy aplikacją, a użytkownikiem. Dodatkowymi funkcjami są obsługa dokumentów, zarządzanie tekstem i wyświetlaniem, obsługę aplikacji oraz rozszerzeń aplikacji.
+UIKit jest platformą, która zapewnia infrastrukturę dla aplikacji. Udostępnia  architekturę widoku do implementacji interfejsu, obsługę zdarzeń, obsługę wielopunktowego dotyku, zarządza zasobami oraz interakcjami pomiędzy aplikacją a użytkownikiem. Dodatkowymi funkcjami są obsługa dokumentów, aplikacji oraz jej rozszerzeń, zarządzanie tekstem i wyświetlaniem.
 
 \index{UIView} \subsubsection{\lstinline$UIView$}
 Widoki są podstawowymi elementami składowymi interfejsu użytkownika aplikacji, a klasa UIView definiuje zachowania wspólne dla wszystkich widoków. Obiekt widoku renderuje zawartość w obrębie prostokąta obwiedni i obsługuje wszelkie interakcje z tą zawartością. 
@@ -57,12 +57,12 @@ Obiekty \textit{CBCentralManager} służą do zarządzania podłączonymi urząd
 Platforma \textit{CoreGraphics} oparta jest na zaawansowanym mechanizmie rysowania \textit{Quartz}. Zapewnia niskopoziomowe renderowanie 2D, zarządzanie wzorcami, gradientami oraz danymi obrazu. Dodatkowo pozwala na tworzenie oraz maskowanie obrazu, a także wyświetlanie i analizowanie dokumentów PDF. W pracy dyplomowej \textit{CoreGrapics} zostało wykorzystane do stworzenia wirtualnego dżojstiku służącego zdalnemu sterowaniu robotem minisumo. 
 
 \subsection{CoreMotion}
-Dostarcza dane dotyczące ruchu urządzenia na podstawie wbudowanego akcelerometru, żyroskopu, krokomierza, magnetometru, barometru itp. W aplikacji użyto wspomnianej platformy do sterowania ruchem robota za pomocą żyroskopu.
+Dostarcza dane dotyczące ruchu urządzenia na podstawie wbudowanego akcelerometru, żyroskopu, krokomierza, magnetometru, barometru itp. W aplikacji użyto wspomnianej platformy do sterowania ruchem robota za pomocą akcelerometru.
 
 \section{Arduino}
-\textit{Arduino} jest platformą programistyczną przeznaczoną dla mikrokontrolerów z wbudowaną obsługą układów wejścia oraz wyjścia. Język programowania \textit{Arduino} oparty jest na języku C/C++. Głównym atutem omawianej platformy jest szeroka społeczność, dokładna dokumentacja oraz łatwość prototypowania prostych układów. Aczkolwiek nie jest zalecana w przypadku złożonych projektów ze względu na wysokopoziomowość oraz niestabilność pracy.
+\textit{Arduino} jest platformą programistyczną przeznaczoną dla mikrokontrolerów z wbudowaną obsługą układów wejścia oraz wyjścia. Język programowania \textit{Arduino} oparty jest na języku C/C++. Głównym atutem omawianej platformy jest szeroka społeczność, dokładna dokumentacja oraz łatwość prototypowania prostych układów. Jednakże omawiania platfomra nie jest zalecana w przypadku złożonych projektów ze względu na wysokopoziomowość oraz niestabilność pracy.
 
-Platforma została użyta do konfiguracji modułu Bluetooth za pomocą komend AT. Skonfigurowano takie parametry jak nazwa urządzenia oraz liczbę symboli na sekundę (\textit{baud rate}. Do tego celu użyto mikrokontrolera \textit{Arduino Mega 2560} oraz płytki stykowej wraz z przewodami połączeniowymi. Konfiguracja modułu była jednorazową czynnością, dlatego zdecydowano się na platformę \textit{Arduino} ze względu na wyżej wspomnianą szybkość oraz prostotę obsługi.
+Platforma została użyta do konfiguracji modułu Bluetooth za pomocą komend AT. Skonfigurowano takie parametry jak nazwa urządzenia oraz liczbę symboli na sekundę (ang.\textit{baud rate}). Do tego celu użyto mikrokontrolera \textit{Arduino Mega 2560} oraz płytki stykowej wraz z przewodami połączeniowymi. Konfiguracja modułu była jednorazową czynnością, dlatego zdecydowano się na platformę \textit{Arduino} ze względu na wyżej wspomnianą szybkość oraz prostotę obsługi.
   
 
 \begin{figure}[H]
