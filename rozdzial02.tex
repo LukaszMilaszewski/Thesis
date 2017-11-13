@@ -12,7 +12,7 @@ Oprogramowanie zostało stworzone w środowisku Eclipse z dodatkiem AC6 wspieraj
 HAL (Hardware Abstraction Layer) jest biblioteką będącą wysokopoziomowym interfejsem służącym do konfiguracji peryferiów mikrokontrolera. Zdecydowano się na wyżej wspomnianą bilbiotekę z powodu bardzo przejrzystej dokumentacji oraz łatwości użytkowania. Dodatkowo użyto środowiska CubeMX, które udostępnia graficzny interfejs, który pozwala na stosunkowo łatwą oraz intuicyjną konfigurację procesora oraz wygenerowanie projektu w języku C wraz z użyciem bibliotek HAL.
 
 
-Na rysunku ~\ref{fig:cubemx} zilustrowano konfigurację peryferiów użytego procesora w środowisku CubeMX.   
+Rysunek ~\ref{fig:cubemx} przedstawia konfigurację peryferiów użytego procesora w środowisku CubeMX.   
 
 \begin{figure}[H]
 	\centering
@@ -26,7 +26,7 @@ Swift jest językiem natywnym (następcą języka Objective–C) zaprezentowanym
 
 Środowiskiem użytym do tworzenia aplikacji mobilnej w technologii Swift był Xcode, którego dużym atutem jest występowanie graficznego interfejsu umożliwiającego tworzenie widoków aplikacji. Dzięki temu tworzenie aplikacji jest bardziej intuicyjne oraz pozwala na sprawne wprowadzanie zmian w tworzonych widokach.
 
-Na rysunku ~\ref{fig:xcode} zilustrowano środowisko Xcode wraz z widokami aplikacji oraz zależnościami między nimi.   
+Ilustracja ~\ref{fig:xcode} ukazuje środowisko Xcode wraz z widokami aplikacji oraz zależnościami między nimi.   
 
 \begin{figure}[H]
 	\centering
@@ -72,9 +72,39 @@ Platforma została użyta do konfiguracji modułu Bluetooth za pomocą komend AT
 	\label{fig:arduino}	
 \end{figure}
 
-Na rysunku ~\ref{fig:arduino} zilustrowano układ Arduino Mega 2560 wraz z płytką stykową oraz podłączonym modułem bluetooth. Dodatkowo układ wyposażono w diodę mającą na celu sygnalizację poprawności wgrywania komend.
- 
+Ilustracja ~\ref{fig:arduino} obrazuje układ Arduino Mega 2560 wraz z płytką stykową oraz podłączonym modułem bluetooth. Dodatkowo układ wyposażono w diodę mającą na celu sygnalizację poprawności wgrywania komend.
 
+\begin{minipage}{\textwidth}
+	\begin{lstlisting}[label=arduinocode,caption=Kod programu umożliwiającego konifugrację modułu Bluetooth HM–10.]
+#include <SoftwareSerial.h>
+ 
+int LEDPIN = 13;
+
+void setup() {
+  pinMode(LEDPIN, OUTPUT);
+  Serial.begin(9600); // communication with computer
+  Serial3.begin(9600); // communication with HM-10  
+}
+ 
+void loop() {
+  if ( Serial3.available() ) {
+    char dioda = Serial3.read();
+    Serial.write(dioda);
+    if (atoi(&dioda)==1) {
+      digitalWrite(LEDPIN, HIGH);
+    }
+    
+    if (atoi(&dioda)==0) {
+      digitalWrite(LEDPIN, LOW);
+    }
+  }
+  
+  if ( Serial.available() ) {  Serial3.write( Serial.read() );  }  
+}
+	\end{lstlisting}
+\end{minipage}
+ 
+Listing \ref{arduinocode} przedstawia kod programu zapewniającego komunikację między komputerem, a modułem Bluetooth przy użyciu mikrokontrolera \textit{Arduino Mega 2560}.  Za pomocą terminalu udostęnionego przez środowisko \textit{Arduino} możliwa jest komunikacja oraz konfiguracja modułu HM–10. Dodatkowo program został rozszerzony o zapalanie oraz gaszenie diody LED w celu sprawdzenia poprawności połączenia. Jeżeli przy użyciu wyżej wspomnianego terminala zostanie wysłana wartość 1, powinna zapalić się dioda. W przypadku wysłania wartości 0, dioda powinna zgasnąć.
 
 
  
