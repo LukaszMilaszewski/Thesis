@@ -22,9 +22,9 @@ Rysunek ~\ref{fig:cubemx} przedstawia konfigurację peryferiów użytego proceso
 \end{figure}
 
 \section{Swift}
-Swift jest językiem natywnym (następcą języka Objective–C) zaprezentowanym przez Apple Inc. w 2014 roku. Wykorzystywany jest do tworzenia oprogramowania na platformy macOS oraz iOS. W pracy dyplomowej użyto wersji języka 3.0, ponieważ była to najnowsza wersja wspierana przez docelowe urządzenie, którym był telefon iPhone 5.
+\textit{Swift} jest językiem natywnym (następcą języka \textit{Objective–C}) zaprezentowanym przez \textit{Apple Inc.} w 2014 roku. Wykorzystywany jest do tworzenia oprogramowania na platformy \textit{macOS, iOS, watchOS}. W pracy dyplomowej użyto wersji języka 3.0, ponieważ była to najnowsza wersja wspierana przez docelowe urządzenie, którym był telefon iPhone 5.
 
-Środowiskiem użytym do tworzenia aplikacji mobilnej w technologii Swift był Xcode, którego dużym atutem jest występowanie graficznego interfejsu umożliwiającego tworzenie widoków aplikacji. Dzięki temu tworzenie aplikacji jest bardziej intuicyjne oraz pozwala na sprawne wprowadzanie zmian w tworzonych widokach.
+Środowiskiem użytym do tworzenia aplikacji mobilnej w technologii \textit{Swift} był \textit{Xcode}, którego dużym atutem jest występowanie graficznego interfejsu umożliwiającego tworzenie widoków aplikacji. Dzięki temu tworzenie aplikacji jest bardziej intuicyjne oraz pozwala na sprawne wprowadzanie zmian w tworzonych widokach.
 
 Ilustracja ~\ref{fig:xcode} ukazuje środowisko Xcode wraz z widokami aplikacji oraz zależnościami między nimi.   
 
@@ -42,10 +42,10 @@ UIKit jest platformą, która zapewnia infrastrukturę dla aplikacji. Udostępni
 Widoki są podstawowymi elementami składowymi interfejsu użytkownika aplikacji, a klasa UIView definiuje zachowania wspólne dla wszystkich widoków. Obiekt widoku renderuje zawartość w obrębie prostokąta obwiedni i obsługuje wszelkie interakcje z tą zawartością. 
 
 \index{UITableView} \subsubsection{\lstinline$UITableView$}
-\textit{UITableView} wyświetla listę pozycji w pojedynczej kolumnie. Jest podklasą \textit{UIScrollView}, która pozwala użytkownikowi przewijać tabelę, z tą różnicą, że przewijanie dozwolone jest wyłącznie w pionie. Komórki zawierające poszczególne elementy tabeli są obiektami \textit{UITableViewCell}. \textit{UITableView} używa wspomnianych obiektów do rysowania widocznych wierszy tabeli. Komórki mogą posiadać tytuły treści, obrazy oraz widoków akcesoriów. Widoki akcesoriów mogą być również elementami sterującymi, takimi jak przełączniki i suwaki. 
+\textit{UITableView} wyświetla listę pozycji w pojedynczej kolumnie. Jest podklasą \textit{UIScrollView}, która pozwala użytkownikowi przewijać tabelę, z tą różnicą, że przewijanie dozwolone jest wyłącznie w pionie. Komórki zawierające poszczególne elementy tabeli są obiektami \textit{UITableViewCell}. \textit{UITableView} używa wspomnianych obiektów do rysowania widocznych wierszy tabeli. Komórki mogą posiadać tytuły treści, obrazy oraz widoki akcesoriów, które mogą pełnić rolę elementów sterujących, takich jak przełączniki i suwaki. 
 
 \subsection{CoreBluetooth}
-Platforma \textit{CoreBluetooth} dostarcza klasy niezbędne do komunikacji aplikacji z urządzeniami wyposażonymi w bezprzewodową technologię Bluetooth.
+Platforma \textit{CoreBluetooth} dostarcza klasy niezbędne do komunikacji aplikacji z urządzeniami wyposażonymi w bezprzewodową komunikację Bluetooth.
 
 \index{CBPeripheral} \subsubsection{\lstinline$CBPeripheral$}
 Klasa \textit{CBPeripheral} reprezentuje zdalne urządzenia peryferyjne, których połączenie  aplikacja wykrywa za pośrednictwem instancji \textit{CBCentralManager}. Urządzenia peryferyjne są identyfikowane za pomocą unikalnych identyfikatorów (UUID) reprezentowanych przez obiekty NSUUID. 

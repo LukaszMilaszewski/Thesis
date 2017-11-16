@@ -20,7 +20,7 @@ Z racji, iż docelowym urządzeniem komunikującym się z robotem był telefon i
 	\label{fig:bt}	
 \end{figure}
 
-Na rysunku ~\ref{fig:bt} po lewej stronie widoczny jest docelowo użyty moduł HM–10, natomiast po prawej wcześniej wspomniany HM–11. U góry ilustracji znajduję się moneta dla odwzorowania rozmiarów omawianych modułów.
+Na rysunku ~\ref{fig:bt} po lewej stronie widoczny jest docelowo użyty moduł HM–10, natomiast po prawej wcześniej wspomniany HM–11. U góry ilustracji znajduję się moneta dla odwzorowania rozmiarów omawianych układów.
 
 \section{Realizacja komunikacji}
 Komunikacja między urządzeniami bazuje na wysyłaniu ciągu dziesięciu znaków, a dokładniej nieujemnych liczb całkowitych, które następnie są parsowane oraz interpretowane w odpowiedni sposób. Domyślnie wiadomość składa się z dziesięciu zer, a następnie wypełniana jest odpowiednimi wartościami. Poniżej przedstawiono przykładowe formaty wiadomości przesyłane między urządzeniami.
@@ -35,7 +35,7 @@ Komunikacja między urządzeniami rozpoczyna się od wysłania wiadomości przez
 	\label{fig:sensors_communication}	
 \end{figure}
 
-Na rysunku ~\ref{fig:sensors_communication} przedstawiono strukturę wiadomości wysłanej przez robota do aplikacji mobilnej. Pierwsza cyfra (równa 4) sygnalizuje aplikacji, iż przesyłana wiadomość zawiera informacje na temat stanu czujników. Cyfry \textit{A, B, C, D} sygnalizują stan cyfrowych czujników wykrywających przeciwnika w sposób binarny (0 – nie wykryto przeciwnika, 1 – wykryto przeciwnika). Cyfry \textit{XX} oraz \textit{YY} informują o stanie analogowych czujników wykrywających koniec ringu (0 – wykryto czarny kolor, 100 – wykryto biały kolor).
+Na rysunku ~\ref{fig:sensors_communication} przedstawiono strukturę wiadomości wysłanej przez robota do aplikacji mobilnej. Pierwsza cyfra (równa 4) sygnalizuje aplikacji, iż przesyłana wiadomość zawiera informacje na temat stanu czujników. Cyfry \textit{A, B, C, D} sygnalizują stan cyfrowych czujników wykrywających przeciwnika w sposób binarny (0 – nie wykryto przeciwnika, 1 – wykryto przeciwnika). Cyfry \textit{XX} oraz \textit{YY} informują o stanie analogowych czujników wykrywających koniec ringu (00 – wykryto czarny kolor, 99 – wykryto biały kolor).
 
 \index{Automatyczne sterowanie} \subsubsection{\lstinline$Automatyczne Sterowanie$}
 
@@ -48,11 +48,11 @@ Komunikacja bazuje na jednorazowym wysłaniu wiadomości do robota z poziomu apl
 	\label{fig:automatic}	
 \end{figure}
 
-Rysunek ~\ref{fig:automatic} obrazuje schemat wiadomości wysłanej z aplikacji mobilnej do robota. Pierwsza cyfra (równa 1) informuje, iż robot przechodzi w stan automatycznej jazdy. Cyfra \textit{A} określa numer algorytmu walki (na chwilę obecną występują trzy algorytmy, numerowane 1,2 oraz 3). Kolejna cyfra \textit{B} dostarcza informację odnośnie rodzaju startu (0 – ruch robota rozpoczyna się w momencie wysłania wiadomości, 1 – robot oczekuje na sygnał sędziego). Ostatnia wartość \textit{XXX} określa procentowo maksymalną moc jaką mogą osiągnąć obydwa silniki (przyjmuje wartości 000 – 100, gdzie 100 oznacza maksymalną moc, a 0 minimalną).
+Rysunek ~\ref{fig:automatic} obrazuje schemat wiadomości wysłanej z aplikacji mobilnej do robota. Pierwsza cyfra (równa 1) informuje, iż robot przechodzi w stan automatycznej jazdy. Cyfra \textit{A} określa numer algorytmu walki (na chwilę obecną występują trzy algorytmy, numerowane 1,2 oraz 3). Kolejna cyfra \textit{B} dostarcza informację odnośnie rodzaju startu (0 – ruch robota rozpoczyna się w momencie wysłania wiadomości, 1 – robot oczekuje na sygnał sędziego). Ostatnia wartość \textit{XXX} określa procentowo maksymalną moc jaką mogą osiągnąć obydwa silniki (przyjmuje wartości 000 – 100, gdzie 100 oznacza maksymalną moc, a 000 minimalną).
 
 \index{Sterowanie zdalne – akcelerometr} \subsubsection{\lstinline$Sterowanie zdalne - akcelerometr$}
 
-Aplikacja mobilna jednorazowo wysyła komunikat, którego pierwsza cyfra oznacza wejście w trym zdalnego sterowania. Następnie aplikacja rozpoczyna nasłuchiwanie wiadomości zawierających kierunki ruchu oraz moce poszczególnych silników.
+Aplikacja mobilna jednorazowo wysyła komunikat, którego pierwsza cyfra oznacza wejście w tryb zdalnego sterowania. Następnie wspomniana aplikacja rozpoczyna nasłuchiwanie wiadomości zawierających kierunki ruchu oraz moce poszczególnych silników wysyłanych przez robota.
 
 \begin{figure}[H]
 	\centering
@@ -61,5 +61,5 @@ Aplikacja mobilna jednorazowo wysyła komunikat, którego pierwsza cyfra oznacza
 	\label{fig:accelerometer}	
 \end{figure}
 
-Ilustracja ~\ref{fig:accelerometer} przedstawia budowę wiadomości wysłanej do aplikacji mobilnej przez robota. Pierwsza cyfra (równa 6) wskazuje, iż robot jest w trybie zdalnego sterowania za pomocą akcelerometru. Kolejne cyfry \textit{A} oraz \textit{B} oznaczają kierunki odpowiedno lewego oraz prawego silnika (1 – obrót w tył, 2 – obrót w przód). \textit{XXX} oraz \textit{YYY} podobnie jak w przypadku trybu automatycznej jazdy określają procentowe moce silników, lewego oraz prawego (przyjmuje wartości 000 – 100, gdzie 100 oznacza maksymalną moc, a 0 minimalną).  
+Ilustracja ~\ref{fig:accelerometer} przedstawia budowę wiadomości wysłanej do aplikacji mobilnej przez robota. Pierwsza cyfra (równa 6) wskazuje, iż robot jest w trybie zdalnego sterowania za pomocą akcelerometru. Kolejne cyfry \textit{A} oraz \textit{B} oznaczają kierunki odpowiedno lewego oraz prawego silnika (1 – obrót w tył, 2 – obrót w przód). \textit{XXX} oraz \textit{YYY} podobnie jak w przypadku trybu automatycznej jazdy określają procentowe moce silników, lewego oraz prawego (przyjmują wartości 000 – 100, gdzie 100 oznacza maksymalną moc, a 000 minimalną).  
 
