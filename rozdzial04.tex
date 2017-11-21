@@ -52,7 +52,7 @@ Jak wspomniano wcześniej, napęd robota składa się z dwóch kół, które ste
 Na zdjęciu ~\ref{fig:drive} przedstawiono napęd robota na który składają się dwa silniki oraz dwie felgi z oponami. Jako jednostkę napędową użyto silników \textit{Pololu HPCB} ze względu  na rozmiary, dopuszczalne napięcie zasilania oraz korzystny stosunek ceny do jakości. Felgi zostały wykonane przy pomocy wydruku 3D, a opony były gotowym komponentem wykonanym z poliuretanu.
 
 \section{Elektronika}
-Projekt elektroniki robota, będącego tematem pracy dyplomowej, został stworzony przy użyciu darmowego środowiska \textit{KiCad}. Z początku płytki zostały wykonane własnoręcznie za pomocą metody termotransferu. Aczkolwiek z powodu dużej ilości przelotek, braku odpowiednich narzędzi oraz kilku błędów popełnionych na etapie projektowania, stwierdzono, iż lepszym rozwiązaniem będzie przeprojektowanie płytki oraz zlecenie wydruku firmie specjalizującej się w tej dziedzinie. Nowa płytka była zdecydowanie trwalsza od poprzedniej wersji. Ponadto dzięki zastosowaniu soldermaski oraz cynowania HAL lutowanie elementów okazało się znacznie łatwiejsze.  
+Projekt elektroniki robota, będącego tematem pracy dyplomowej, został stworzony przy użyciu darmowego środowiska \textit{KiCad}. Z początku płytki zostały wykonane własnoręcznie za pomocą metody termotransferu. Aczkolwiek z powodu dużej ilości przelotek, braku odpowiednich narzędzi oraz kilku błędów popełnionych na etapie projektowania, stwierdzono, iż lepszym rozwiązaniem będzie przeprojektowanie płytki oraz zlecenie wydruku firmie specjalizującej się w~tej dziedzinie. Nowa płytka była zdecydowanie trwalsza od poprzedniej wersji. Ponadto dzięki zastosowaniu soldermaski oraz cynowania HAL lutowanie elementów okazało się znacznie łatwiejsze.  
 
 Docelowo robot posiada dwie płytki:
 \begin{itemize}
@@ -166,8 +166,8 @@ Poniższy listing \ref{pwmcode} przedstawia fragment kodu, który modyfikuje moc
 
 \begin{minipage}{\textwidth}
 	\begin{lstlisting}[label=pwmcode,caption=Sterowanie mocą silników.]
-  		TIM1->CCR1 = parseValueFromMessage(3,4);
-  		TIM1->CCR4 = parseValueFromMessage(5,6);
+TIM1->CCR1 = parseValueFromMessage(3,4);
+TIM1->CCR4 = parseValueFromMessage(5,6);
 	\end{lstlisting}
 \end{minipage}
 
@@ -177,16 +177,16 @@ Obsługa stanu czujników została zrealizowana w bardzo prosty sposób wynikaj�
 \begin{minipage}{\textwidth}
 	\begin{lstlisting}[label=sharpcode,caption=Obsługa czujników przeciwnika.]
 if(!HAL_GPIO_ReadPin(GPIOB, sharp_l_Pin))
-  			transmit_message[0] = 1;
+	transmit_message[0] = 1;
 
-  		if(!HAL_GPIO_ReadPin(GPIOB, sharp_ul_Pin))
-  			transmit_message[1] = 1;
+if(!HAL_GPIO_ReadPin(GPIOB, sharp_ul_Pin))
+	transmit_message[1] = 1;
 
-  		if(!HAL_GPIO_ReadPin(GPIOB, sharp_ur_Pin))
-  			transmit_message[2] = 1;
+if(!HAL_GPIO_ReadPin(GPIOB, sharp_ur_Pin))
+	transmit_message[2] = 1;
 
-  		if(!HAL_GPIO_ReadPin(GPIOB, sharp_r_Pin))
-  			transmit_message[3] = 1;
+if(!HAL_GPIO_ReadPin(GPIOB, sharp_r_Pin))
+	transmit_message[3] = 1;
 	\end{lstlisting}
 \end{minipage}
 
