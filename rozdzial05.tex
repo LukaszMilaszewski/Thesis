@@ -326,7 +326,7 @@ Powyższy listing \ref{sensors} przedstawia funkcję \textit{parseSensors}, któ
 \subsubsection{Diagnostyka silników}
 Panel diagnostyki silników powstał w celu sprawdzenia zachowania poszczególnego motoru. Jego widok składa się z dwóch niezależnych suwaków, które służą do ustawienia odpowiedniej mocy oraz kierunku obrotu każdego z silników.
 
-Obrazek \ref{fig:motors} przedstawia wygląd omawianego panelu. Domyślnie suwaki są wyśrodkowane, co oznacza brak obrotu. Przesunięcie suwaka w lewo powoduje obrót silnika w tył, natomiast w prawo obrót w przód.
+Obrazek \ref{fig:motors} przedstawia wygląd omawianego panelu. Domyślnie suwaki są wyśrodkowane, co oznacza brak obrotu. Przesunięcie suwaka w lewo powoduje obrót silnika w tył, natomiast w~prawo obrót w przód.
 
 \begin{figure}[H]
 	\centering
@@ -335,28 +335,28 @@ Obrazek \ref{fig:motors} przedstawia wygląd omawianego panelu. Domyślnie suwak
 	\label{fig:motors}	
 \end{figure}
 
-
+Listing \ref{motorscode} zawiera implementację metody \textit{RightMotor} (należącej do klasy \textit{CheckMotorsViewController}), która nasłuchuje zmian położenia suwaka. Zakres wartości mieści się w przedziale od -100 do 100, gdzie wartości ujemne interpretowane są jako obrót silnika w tył (przeciwnie do ruchu wskazówek zegara). Linia 3 przedstawia pobranie wartości położenia suwaka. Linie 4 – 9 ukazują fragment kodu, który parsuje uzyskaną wartość i określa kierunek obrotu. Następnie wartość położenia suwaka jest parsowana na pojedyncze znaki oraz przypisywana do odpowiednich indeksów tablicy \textit{msg}, która zostaje wysłana do robota. Wiadomość z żądaną mocą oraz kierunkiem obrotu silnika wysyłana jest co 200 milisekund z powodów opisanych w~poprzednich podrozdziałach pracy. Analogicznie dla lewego silnika powstała metoda \textit{LeftMotor}.
 
 \begin{minipage}{\textwidth}
 	\begin{lstlisting}[label=motorscode,caption=Nasłuchiwanie zmiany położenia suwaka.]
 IBAction func RightMotor(_ sender: UISlider) {
   
-  right_motor_power = Int(sender.value)
-  if right_motor_power < 0 {
-    right_motor_direction = 1
-    right_motor_power *= -1
+  rightMotorPower = Int(sender.value)
+  if rightMotorPower < 0 {
+    rightMotorDirection = 1
+    rightMotorPower *= -1
   } else {
-    right_motor_direction = 2
+    rightMotorDirection = 2
   }
     
-  msg[2] = String(right_motor_direction)
+  msg[2] = String(rightMotorDirection)
     
-  if right_motor_power < 10 {
+  if rightMotorPower < 10 {
     msg[5] = "0"
-    msg[6] = String(right_motor_power)
+    msg[6] = String(rightMotorPower)
   } else {
-    msg[5] = String(right_motor_power / 10)
-    msg[6] = String(right_motor_power % 10)
+    msg[5] = String(rightMotorPower / 10)
+    msg[6] = String(rightMotorPower % 10)
   }
     
   usleep(useconds_t(20 * ms))
@@ -366,11 +366,12 @@ IBAction func RightMotor(_ sender: UISlider) {
 	\end{lstlisting}
 \end{minipage}
 
-
-
-
 \subsubsection{Czyszczenie opon}
-Bla bla bla . . .
+Panel czyszczenia opon jest uboższą wersją panelu diagnostyki silników. Składa się z jednego przełącznika, który ustala moc obu silników na 20\% dostępnej mocy. Funkcjonalność powstała z myślą o czyszczeniu opon robota, które wykonane zostały z poliuretanu przez co bardzo szybko tracą przyczepność z powodu dużej podatności na zbieranie brudu.
+
+\newpage
+
+Poniższe zdjęcie \ref{fig:tires} przedstawia wygląd panelu służącemu czyszczenia opon konstrukcji.
 
 \begin{figure}[H]
 	\centering
@@ -378,3 +379,20 @@ Bla bla bla . . .
 	\caption{Widok funkcji czyszczenia opon.}
 	\label{fig:tires}	
 \end{figure}
+
+Na listingu \ref{tirescode} przedstawiono metodę \textit{changedState} będącą członkiem klasy \textit{CleaningTiresViewController}. Wywoływana jest w momencie zmiany położenia przełącznika, a następnie w~zależności od jego stanu wysyła odpowiednio skonstruowaną wiadomość do robota.  
+
+\begin{minipage}{\textwidth}
+	\begin{lstlisting}[label=tirescode,caption=Nasłuchiwanie zmiany położenia przełącznika.]
+IBAction func changedState(_ sender: UISwitch) {
+  if sender.isOn {
+    msg[0] = "3"
+    serial.sendMessageToDevice(msg.joined())
+  } else {
+    msg[0] = "0"
+    serial.sendMessageToDevice(msg.joined())
+  }
+}
+	\end{lstlisting}
+\end{minipage}
+
