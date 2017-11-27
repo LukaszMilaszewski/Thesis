@@ -26,7 +26,11 @@ Podział opisanych ról przedstawiono na rysunku ~\ref{fig:mvc}.
 Dzięki wykorzystaniu tego wzorca uniezależniono przechowywane dane od sposobu w jaki są one przedstawiane użytkownikowi.
 
 \section{Komunikacja}
+<<<<<<< HEAD
 Komunikacja z modułem Bluetooth została zrealizowana przy użyciu wcześniej wspomnianej platformy \textit{CoreBluetooth}. Utworzono klasę \textit{BluetoothSerial}, która była odpowiedzialna za całą logikę potrzebną do poprawnej wymiany danych między urządzeniami. Z racji, iż komunikacja jest nieodłącznym elementem każdej z funkcjonalności aplikacji skorzystano z protokołów. Protokoły są czymś na wzór intefejsów używanych w językach takich jak C++ bądź Java. Deklarują metody, lecz ich nie implementują. Każda klasa, która korzysta z komunikacji \textit{Bluetooth} musi zaimplementować metody zawarte w protokołach. Dzięki takiemu podejściu uniezależniamy logikę od kontrolerów. Klasa \textit{BluetoothSerial} nie jest w żaden sposób zależna od innych klas. Natomiast klasy, które wykorzystują komunikację, implementują odpowiednie metody w~zależności od indywidualnych konkretnych potrzeb.
+=======
+Komunikacja z modułem Bluetooth została zrealizowana przy użyciu wcześniej wspomnianej platformy \textit{CoreBluetooth}. Utworzono klasę \textit{BluetoothSerial}, która była odpowiedzialna za całą logikę potrzebną do poprawnej wymiany danych między urządzeniami. Z racji, iż komunikacja jest nieodłącznym elementem każdej z funkcjonalności aplikacji skorzystano z protokołów. Protokoły są czymś na wzór intefejsów używanych w językach takich jak C++ bądź Java. Deklarują metody, lecz ich nie implementują. Każda klasa, która korzysta z komunikacji \textit{Bluetooth} musi zaimplementować metody zawarte w protokołach. Dzięki takiemu podejściu uniezależniamy logikę od kontrolerów. Klasa \textit{BluetoothSerial} nie jest w żaden sposób zależna od innych klas. Natomiast klasy, które wykorzystują komunikację, implementują odpowiednie metody w zależności od indywidualnych potrzeb.
+>>>>>>> 8ffa51a4e013d4ba0f173f018c7826bc29c184d2
 
 \begin{minipage}{\textwidth}
 	\begin{lstlisting}[label=protocolcode,caption=Protokół odpowiedzialny za komunikację między urządzeniami.]
@@ -57,8 +61,11 @@ Listing \ref{protocolcode} przedstawia zestaw metod zawartych w protokole komuni
 \end{itemize}
 
 Tak jak wcześniej wspomniano, klasy korzystające z komunikacji mogą implementować dowolne z wyżej wymienionych metod w zależności od potrzeb.
+<<<<<<< HEAD
 
 \newpage
+=======
+>>>>>>> 8ffa51a4e013d4ba0f173f018c7826bc29c184d2
 
 \section{Struktura aplikacji}
 Tak jak wcześniej wspomniano, aplikacja została stworzona przy użyciu wzorca \textit{MVC}. Poniżej przedstawiono strukturę plików aplikacji.
@@ -72,6 +79,7 @@ Tak jak wcześniej wspomniano, aplikacja została stworzona przy użyciu wzorca 
 
 Na rysunku \ref{fig:structure} pliki o rozszerzeniu \textit{swift}, których nazwy kończą się na \textit{Controller} pełnią rolę kontrolerów, a \textit{View} widoków przedstawianych użytkownikowi. Reszta plików odpowiedzialna jest za logikę aplikacji. Dodatkowo plik \textit{Main.storyboard} zawiera konfiguracje większości widoków stworzonych przy użyciu graficznego narzędzia dostarczonego przez środowisko \textit{Xcode}.
 
+<<<<<<< HEAD
 \subsection{Panel powitalny}
 Panel powitalny jest pierwszym widokiem z którym użytkownik ma do czynienia po uruchomieniu aplikacji mobilnej. Odpowiada on za poprawne wykrycie urządzenia \textit{Bluetooth} oraz dalszą komunikację. Składa się z elementów takich jak krótka instrukcja obsługi oraz przycisk \textit{Connect}, który po wciśnięciu wyświetla listę urządzeń gotowych na połączenie. Dodatkowo w przypadku wyłączonej komunikacji \textit{Bluetooth} zostanie wyświetlony komunikat o konieczności jej włączenia. 
 
@@ -378,3 +386,10 @@ Bla bla bla . . .
 	\caption{Widok funkcji czyszczenia opon.}
 	\label{fig:tires}	
 \end{figure}
+=======
+\subsection{Widok główny}
+
+\subsection{Widok sterowania automatycznego}
+\subsection{Widok sterowania zdalnego}
+\subsection{Widok diagnostyki}
+>>>>>>> 8ffa51a4e013d4ba0f173f018c7826bc29c184d2
