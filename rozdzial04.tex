@@ -11,6 +11,8 @@ W niniejszym rozdziale opisany został proces tworzenia robota minisumo. Wyróż
 
 Zdjęcie ~\ref{fig:robot} przedstawia omawianego robota minisumo. W celu ukazania elektroniki ściągnięto nadwozie.
 
+\newpage 
+
 \section{Konstrukcja}
 \subsection{Założenia}
 Głównym założeniem konstrukcyjnym było zminimalizowanie szansy podbicia robota przez przeciwnika. W związku z czym napęd robota składa się z dwóch kół umiejscowionych w tylnej części konstrukcji. Przednia część robota zakończona jest pługiem, który bezpośrednio dotyka podłoża. Dodatkowo starano się, aby środek ciężkości całej konstrukcji znajdował się jak najbliżej podłoża.
@@ -92,7 +94,7 @@ Powyższe wymagania spełniał procesor \textit{STM32F100C8T6B - LQFP48}. Dodatk
 Konstrukcja została wyposażona w cztery czujniki \textit{SHARP Gp2y0d340k} wykrywające obecność przeciwnika do 40 centymetrów. Umieszczono je z przodu robota – dwa po bokach oraz dwa od frontu. Dodatkowo przy pługu znajdują się dwa czujniki sygnalizujące opuszczenie pola walki.
 
 \subsection{Sterownik silników}
-Jako sterownik posłużył dwukanałowy, 1.2 amperowy mostek H \textit{TB6612}. Wybór został podyktowany dostępnością oraz ceną. Aczkolwiek z czasem okazało się, iż omawiany układ jest bardzo awaryjny, szczególnie nie nadaje się do walki w zwarciu.
+Jako sterownik posłużył dwukanałowy, 1.2 amperowy mostek H \textit{TB6612}. Wybór został podyktowany dostępnością oraz ceną. Aczkolwiek z czasem okazało się, iż omawiany układ jest bardzo awaryjny, szczególnie nie nadaje się do walki w zwarciu \cite{AVR}.
 
 \subsection{Schemat elektroniki}
 W celu zwiększenia czytelności schemat podzielono na moduły, które podpisano oraz obramowano niebieską linią. 

@@ -83,13 +83,13 @@ Po lewej stronie na obrazku \ref{fig:initial} przedstawiono omawiany panel, nato
 \centering
 \begin{minipage}{.5\textwidth}
   \centering
-  \includegraphics[width=.75\linewidth, height=10cm, keepaspectratio]{pic05/structure.png}
+  \includegraphics[width=.75\linewidth, height=10cm, keepaspectratio, fbox]{pic05/initial.PNG}
   \caption{Widok połączenia.}
   \label{fig:initial}
 \end{minipage}%
 \begin{minipage}{.5\textwidth}
   \centering
-  \includegraphics[width=.75\linewidth, height=10cm, keepaspectratio]{pic05/structure.png}
+  \includegraphics[width=.75\linewidth, height=10cm, keepaspectratio, fbox]{pic05/scanning.PNG}
   \caption{Widok dostępnych urządzeń.}
   \label{fig:scanner}
 \end{minipage}
@@ -136,7 +136,7 @@ Panel główny odpowiedzialny jest tylko i wyłącznie za nawigację do poszczeg
 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio]{pic05/structure.png}
+		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio, fbox]{pic05/main.PNG}
 	\caption{Panel główny aplikacji mobilnej.}
 	\label{fig:mainview}	
 \end{figure}
@@ -150,7 +150,7 @@ Zdjęcie \ref{fig:automaticview} ukazuje wygląd opisywanego panelu sterowania a
 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio]{pic05/structure.png}
+		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio, fbox]{pic05/algorithm.PNG}
 	\caption{Panel sterowania automatycznego aplikacji mobilnej.}
 	\label{fig:automaticview}	
 \end{figure}
@@ -180,7 +180,7 @@ Zdjęcie \ref{fig:accview} przedstawia wygląd omawianego panelu. Warto zauważy
 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio]{pic05/structure.png}
+		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio, fbox]{pic05/gyro.PNG}
 	\caption{Panel sterowania zdalnego akcelerometrem.}
 	\label{fig:accview}	
 \end{figure}
@@ -190,7 +190,7 @@ W celu realizacji wyżej wspomnianej funkcjonalności wykorzystano obrót urząd
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.6\linewidth]{pic05/axis}
-	\caption{Osie X, Y oraz Z określające orientację urządzenia.}
+	\caption{Osie X, Y oraz Z określające orientację urządzenia \cite{Axis}.}
 	\label{fig:axis}	
 \end{figure}
 
@@ -218,7 +218,7 @@ Sterowanie odbywa się za pomocą dwuwymiarowego drążka w postaci niebieskiego
 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio]{pic05/structure.png}
+		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio, fbox]{pic05/joystick.PNG}
 	\caption{Panel sterowania zdalnego dżojstikiem.}
 	\label{fig:joystickview}	
 \end{figure}
@@ -227,12 +227,12 @@ Powyższe zdjęcie \ref{fig:joystickview} przedstawia wygląd panelu służąceg
 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio]{pic05/structure.png}
+		\includegraphics[width=0.75\linewidth]{pic05/joy.png}
 	\caption{Wirtualny dżojstik.}
 	\label{fig:joystickdirections}	
 \end{figure}
 
-Ilustracja \ref{fig:joystickdirections} przedstawia zależność kierunku jazdy konstrukcji od kąta odchylenia drążka. Jak łatwo zauważyć, górna półkula odpowiedzialna jest za jazdę w przód, natomiast dolna w tył (półkule zostały oddzielone czerwoną kreską). Analogicznie lewa półkula pozwala na jazdę w~lewo, a prawa w prawo (półkule zostały oddzielone zieloną kreską). Dodatkowo w celu ułatwienia oszacowania żądanej mocy silników utworzono okrąg, który wyznacza granicę maksymalnego wychylenia drążka.
+Ilustracja \ref{fig:joystickdirections} przedstawia zależność kierunku jazdy konstrukcji od kąta odchylenia drążka. Jak łatwo zauważyć, górna półkula odpowiedzialna jest za jazdę w przód, natomiast dolna w tył (półkule zostały oddzielone czerwoną kreską). Analogicznie lewa półkula pozwala na jazdę w~lewo, a prawa w prawo (półkule zostały oddzielone zieloną kreską). Dodatkowo w celu ułatwienia oszacowania żądanej mocy silników utworzono szary okrąg, który wyznacza granicę maksymalnego wychylenia drążka.
 
 Za zdalne sterowanie wirtualnym dżojstikiem odpowiedzialna jest klasa \textit{JoystickView}, (implementuje wygląd oraz położenie drążka) oraz klasa  \textit{JoystickViewController}, która nasłuchuje zmian położenia drążka oraz wysyła odpowiednią informację do robota. 
 
@@ -278,7 +278,7 @@ Stworzony widok składa się z trzech zakładek: . Nawigowanie między funkcjona
 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio]{pic05/structure.png}
+		\includegraphics[width=0.75\linewidth, fbox]{pic05/tabs}
 	\caption{Widok zakładek w panelu diagnostyki.}
 	\label{fig:pitstopview}	
 \end{figure}
@@ -292,7 +292,7 @@ Panel diagnostyki czujników powstał z myślą o sprawdzeniu poprawności dzia�
 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio]{pic05/structure.png}
+		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio, fbox]{pic05/sensors.PNG}
 	\caption{Widok diagnostyki czujników.}
 	\label{fig:diagsensors}	
 \end{figure}
@@ -302,12 +302,12 @@ Rysunek \ref{fig:diagsensors} ukazuje widok diagnostyki czujników. Przedstawion
 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio]{pic05/structure.png}
+		\includegraphics[width=0.75\linewidth]{pic05/sensorsvis.jpg}
 	\caption{Poprawność działania diagnostyki czujników.}
 	\label{fig:realsensors}	
 \end{figure}
 
-Natomiast na ilustracji \ref{fig:realsensors} przedstawiono działanie omawianego panelu. Po lewej stronie znajduje się robot z zasłoniętym lewym oraz górnym czujnikiem (oznacza to wykrycie przeciwnika), a po prawej stronie telefon z wizualizacją działania aplikacji. Jak widać wiadomość nadesłana z robota została odpowiednio zinterpretowana, ponieważ pojawiła się lewa oraz górna etykieta \textit{work}.
+Natomiast na ilustracji \ref{fig:realsensors} przedstawiono działanie omawianego panelu. Po lewej stronie znajduje się robot z zasłoniętym lewym oraz prawym górnym czujnikiem (oznacza to wykrycie przeciwnika), a po prawej stronie telefon z wizualizacją działania aplikacji. Jak widać wiadomość nadesłana z robota została odpowiednio zinterpretowana, ponieważ pojawiła się lewa oraz prawa górna etykieta \textit{work}.
 
 \begin{minipage}{\textwidth}
 	\begin{lstlisting}[label=sensors,caption=Parsowanie wiadomości zawierającej stan czujników.]
@@ -330,7 +330,7 @@ Obrazek \ref{fig:motors} przedstawia wygląd omawianego panelu. Domyślnie suwak
 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio]{pic05/structure.png}
+		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio, fbox]{pic05/motors.PNG}
 	\caption{Widok diagnostyki silników.}
 	\label{fig:motors}	
 \end{figure}
@@ -375,7 +375,7 @@ Poniższe zdjęcie \ref{fig:tires} przedstawia wygląd panelu służącemu czysz
 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio]{pic05/structure.png}
+		\includegraphics[width=0.75\linewidth, height=10cm, keepaspectratio, fbox]{pic05/tires.PNG}
 	\caption{Widok funkcji czyszczenia opon.}
 	\label{fig:tires}	
 \end{figure}

@@ -23,7 +23,7 @@ Z racji, iż docelowym urządzeniem komunikującym się z robotem był telefon i
 Na rysunku ~\ref{fig:bt} po lewej stronie widoczny jest docelowo użyty moduł HM–10, natomiast po prawej wcześniej wspomniany HM–11. U góry ilustracji znajduję się moneta dla odwzorowania rozmiarów omawianych układów.
 
 \section{Realizacja komunikacji}
-Komunikacja między urządzeniami bazuje na wysyłaniu ciągu dziesięciu znaków, a dokładniej nieujemnych liczb całkowitych, które następnie są parsowane oraz interpretowane w odpowiedni sposób. Domyślnie wiadomość składa się z dziesięciu zer, a następnie wypełniana jest odpowiednimi wartościami. Poniżej przedstawiono przykładowe formaty wiadomości przesyłane między urządzeniami.
+Komunikacja między urządzeniami bazuje na wysyłaniu ciągu dziesięciu znaków, a dokładniej nieujemnych liczb całkowitych, które następnie są parsowane oraz interpretowane w odpowiedni sposób \cite{Forbot}. Domyślnie wiadomość składa się z dziesięciu zer, a następnie wypełniana jest odpowiednimi wartościami. Poniżej przedstawiono przykładowe formaty wiadomości przesyłane między urządzeniami.
 
 \index{Sensory} \subsubsection{\lstinline$Sensory$}
 Komunikacja między urządzeniami rozpoczyna się od wysłania wiadomości przez aplikację mobilną w której pierwsza cyfra wiadomości ma wartość równą 4. Następnie co określony czas robot wysyła wiadomość w której zawarty jest aktualny stan czujników. Komunikacja kończy się w momencie, gdy aplikacja mobilna wyśle wiadomość w której pierwsza cyfra jest różna od 4.
