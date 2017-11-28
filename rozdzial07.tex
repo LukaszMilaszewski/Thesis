@@ -1,5 +1,19 @@
 \chapter{Podsumowanie}
+W pracy zaprojektowano oraz wykonano robota kategorii minisumo. Dodatkowo zaimplementowano aplikację mobilną na platformę iOS, która steruje wspomnianym robotem. Głównym założeniem powstałej aplikacji było umożliwienie wygodnego wyboru algorytmu walki bez potrzeby przeprogramowywania robota, bądź zawierania w projekcie elektroniki dodatkowych przycisków, które służyłyby przełączaniu funkcjonalności. Ponadto powstał panel diagnostyki czujników oraz silników, który okazał się nieoceniony, ponieważ użyty w pracy model czujników przeciwnika okazał się zawodny, czego z początku nie wzięto pod uwagę. W ramach pracy stworzono również możliwość sterowania zdalnego robotem. Funkcjonalność ta nie posiada większego zastosowania, aczkolwiek powstała w celach edukacyjnych. Warto zauważyć, iż cała aplikacja mobilna powstała w oparciu o wzorzec \textit{MVC}, dzięki czemu kod źródłowy jest łatwo modyfikowalny, a zastosowanie zrozumiałych nazw metod jak i zmiennych wpłynęło pozytywnie na czytelność kodu.
 
-\section{Zrealizowane założenia}
-\section{Dalszy rozwój projektu}
-\section{Uwagi}
+\section{Dalsze kierunki rozwoju projektu}
+Do dalszych kierunków rozwoju należy:
+
+\begin{itemize}
+\item obsługę utraty połączenia \textit{Bluetooth} z robotem. Na chwilę obecną aplikacja w żaden sposób nie informuje użytkownika o braku łączności z urządzeniem docelowym. Wciąż jest responsywna, natomiast nie nadaje żadnych wiadomości;
+\item możliwość tworzenia własnych algorytmów walki z poziomu aplikacji w oparciu o wcześniej zdefiniowane zachowania robota;
+\item stworzenie panelu będącego dziennikiem odbytych zawodów wraz z możliwością sporządzania notatek;
+\item obsługa czujników wykrywających koniec ringu;
+\item poprawa złącza zasilania w robocie, ponieważ obecne pod wpływem drgań potrafi chwilowo przerwać zasilanie przez co następuje restart robota;
+\item poprawa schematu elektroniki. Głównie ulepszenie filtracji zasilania perfyferiów oraz zlikwidowanie przelotek w ścieżkach między zasilaniem, a odbiornikiem, które prądowe zapotrzebowanie jest wysokie (mostki H będące sterownikami silników).
+\item nawiercenie stalowego podwozia robota w celu zmniejszenia masy;
+\item wykonanie trwalszego nadwozia;
+\item zastosowanie mocniejszych sterowników silników w celu zwiększenia szansy na wygraną podczas starcia w zwarciu;
+\item przeprojektowania złącza programatora, ponieważ obecne nie uwzględnia linii NRST potrzebnej do uruchomienia oprogramowania w trybie debugowania, przez co utrudnione jest wyszukiwanie potencjalnych błędów w kodzie. 
+\end{itemize}
+

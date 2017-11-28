@@ -3,13 +3,13 @@
 Projekt został zrealizowany pod systemem Windows 10 oraz Mac OS X El Capitan. 
 
 \section{C}
-Z racji, iż sercem robota jest procesor z rodziny STM, wybór technologii został ograniczony do języka C lub C++. Wybrano język C z powodów optymalizacyjnych oraz małego stopnia skomplikowania programu. 
+Z racji, iż sercem robota jest procesor z rodziny \textit{STM}, wybór technologii został ograniczony do języka C lub C++. Wybrano język C z powodów optymalizacyjnych oraz małego stopnia skomplikowania programu \cite{C}. 
 
 
-Oprogramowanie zostało stworzone w środowisku Eclipse z dodatkiem AC6 wspierającym platformę STM32.
+Oprogramowanie zostało stworzone w środowisku \textit{Eclipse} z dodatkiem \textit{AC6} wspierającym platformę \textit{STM32}.
 
 \subsection{HAL}
-HAL (Hardware Abstraction Layer) jest biblioteką będącą wysokopoziomowym interfejsem służącym do konfiguracji peryferiów mikrokontrolera. Zdecydowano się na wyżej wspomnianą bilbiotekę z powodu bardzo przejrzystej dokumentacji oraz łatwości użytkowania. Dodatkowo użyto środowiska CubeMX, które udostępnia graficzny interfejs, który pozwala na stosunkowo łatwą oraz intuicyjną konfigurację procesora oraz wygenerowanie projektu w języku C wraz z~użyciem bibliotek HAL.
+\textit{HAL} (ang. \textit{Hardware Abstraction Layer}) jest biblioteką będącą wysokopoziomowym interfejsem służącym do konfiguracji peryferiów mikrokontrolera. Zdecydowano się na wyżej wspomnianą bilbiotekę z powodu bardzo przejrzystej dokumentacji oraz łatwości użytkowania. Dodatkowo użyto środowiska \textit{CubeMX}, które udostępnia graficzny interfejs pozwalający na stosunkowo łatwą oraz intuicyjną konfigurację procesora oraz wygenerowanie projektu w języku C wraz z~użyciem bibliotek HAL.
 
 Rysunek ~\ref{fig:cubemx} przedstawia konfigurację peryferiów użytego procesora w środowisku CubeMX.   
 
@@ -21,9 +21,9 @@ Rysunek ~\ref{fig:cubemx} przedstawia konfigurację peryferiów użytego proceso
 \end{figure}
 
 \section{Swift}
-\textit{Swift} jest językiem natywnym (następcą języka \textit{Objective–C}) zaprezentowanym przez \textit{Apple Inc.} w 2014 roku. Wykorzystywany jest do tworzenia oprogramowania na platformy \textit{macOS, iOS, watchOS}. W pracy dyplomowej użyto wersji języka 3.0, ponieważ była to najnowsza wersja wspierana przez docelowe urządzenie, którym był telefon iPhone 5.
+\textit{Swift} jest językiem natywnym (następcą języka \textit{Objective–C}) zaprezentowanym przez \textit{Apple Inc.} w 2014 roku. Wykorzystywany jest do tworzenia oprogramowania na platformy \textit{macOS, iOS} oraz \textit{watchOS}. W pracy dyplomowej użyto wersji języka 3.0, ponieważ była to najnowsza wersja wspierana przez docelowe urządzenie, którym był telefon iPhone 5.
 
-Środowiskiem użytym do tworzenia aplikacji mobilnej w technologii \textit{Swift} był \textit{Xcode}, którego dużym atutem jest występowanie graficznego interfejsu umożliwiającego tworzenie widoków aplikacji. Dzięki temu tworzenie aplikacji jest bardziej intuicyjne oraz pozwala na sprawne wprowadzanie zmian w tworzonych widokach.
+Środowiskiem użytym do tworzenia aplikacji mobilnej w technologii \textit{Swift} był \textit{Xcode}, którego dużym atutem jest występowanie graficznego interfejsu umożliwiającego tworzenie widoków aplikacji. Dzięki temu tworzenie aplikacji jest bardziej intuicyjne oraz pozwala na sprawne wprowadzanie zmian w tworzonych widokach \cite{Swift}.
 
 Ilustracja ~\ref{fig:xcode} ukazuje środowisko Xcode wraz z widokami aplikacji oraz zależnościami między nimi.   
 
@@ -35,13 +35,13 @@ Ilustracja ~\ref{fig:xcode} ukazuje środowisko Xcode wraz z widokami aplikacji 
 \end{figure}
 
 \subsection{UIKit}
-UIKit jest platformą, która zapewnia infrastrukturę dla aplikacji. Udostępnia  architekturę widoku do implementacji interfejsu, obsługę zdarzeń, obsługę wielopunktowego dotyku, zarządza zasobami oraz interakcjami pomiędzy aplikacją a użytkownikiem. Dodatkowymi funkcjami są obsługa dokumentów, aplikacji oraz jej rozszerzeń, zarządzanie tekstem i wyświetlaniem.
+\textit{UIKit} jest platformą, która zapewnia infrastrukturę dla aplikacji. Udostępnia  architekturę widoku do implementacji interfejsu, obsługę zdarzeń, obsługę wielopunktowego dotyku, zarządza zasobami oraz interakcjami pomiędzy aplikacją a użytkownikiem. Dodatkowymi funkcjami są obsługa dokumentów, aplikacji oraz jej rozszerzeń, zarządzanie tekstem i wyświetlaniem \cite{AppleDocumentation}.
 
 \index{UIView} \subsubsection{\lstinline$UIView$}
-Widoki są podstawowymi elementami składowymi interfejsu użytkownika aplikacji, a klasa UIView definiuje zachowania wspólne dla wszystkich widoków. Obiekt widoku renderuje zawartość w obrębie prostokąta obwiedni i obsługuje wszelkie interakcje z tą zawartością. 
+Widoki są podstawowymi elementami składowymi interfejsu użytkownika aplikacji, a klasa \textit{UIView} definiuje zachowania wspólne dla wszystkich widoków. Obiekt widoku renderuje zawartość w obrębie prostokąta obwiedni i obsługuje wszelkie interakcje z tą zawartością. 
 
 \index{UITableView} \subsubsection{\lstinline$UITableView$}
-\textit{UITableView} wyświetla listę pozycji w pojedynczej kolumnie. Jest podklasą \textit{UIScrollView}, która pozwala użytkownikowi przewijać tabelę, z tą różnicą, że przewijanie dozwolone jest wyłącznie w pionie. Komórki zawierające poszczególne elementy tabeli są obiektami \textit{UITableViewCell}. \textit{UITableView} używa wspomnianych obiektów do rysowania widocznych wierszy tabeli. Komórki mogą posiadać tytuły treści, obrazy oraz widoki akcesoriów, które mogą pełnić rolę elementów sterujących, takich jak przełączniki i suwaki. 
+\textit{UITableView} wyświetla listę pozycji w pojedynczej kolumnie. Jest podklasą \textit{UIScrollView}, która pozwala użytkownikowi przewijać tabelę, z tą różnicą, że przewijanie dozwolone jest wyłącznie w pionie. Komórki zawierające poszczególne elementy tabeli są obiektami \textit{UITableViewCell}. \textit{UITableView} używa wspomnianych obiektów do rysowania widocznych wierszy tabeli. Komórki mogą posiadać tytuły treści, obrazy oraz widoki akcesoriów, które mogą pełnić rolę elementów sterujących takich jak przełączniki i suwaki. 
 
 \subsection{CoreBluetooth}
 Platforma \textit{CoreBluetooth} dostarcza klasy niezbędne do komunikacji aplikacji z urządzeniami wyposażonymi w bezprzewodową komunikację Bluetooth.
@@ -61,7 +61,7 @@ Dostarcza dane dotyczące ruchu urządzenia na podstawie wbudowanego akceleromet
 \section{Arduino}
 \textit{Arduino} jest platformą programistyczną przeznaczoną dla mikrokontrolerów z wbudowaną obsługą układów wejścia oraz wyjścia \cite{Arduino}. Język programowania \textit{Arduino} oparty jest na języku C/C++. Głównym atutem omawianej platformy jest szeroka społeczność, dokładna dokumentacja oraz łatwość prototypowania prostych układów. Jednakże omawiania platfomra nie jest zalecana w~przypadku złożonych projektów ze względu na wysokopoziomowość oraz niestabilność pracy.
 
-Platforma została użyta do konfiguracji modułu Bluetooth za pomocą komend AT. Skonfigurowano takie parametry jak nazwa urządzenia oraz liczbę symboli na sekundę (ang.\textit{baud rate}). Do tego celu użyto mikrokontrolera \textit{Arduino Mega 2560} oraz płytki stykowej wraz z przewodami połączeniowymi. Konfiguracja modułu była jednorazową czynnością, dlatego zdecydowano się na platformę \textit{Arduino} ze względu na wyżej wspomnianą szybkość oraz prostotę obsługi.
+Platforma została użyta do konfiguracji modułu Bluetooth za pomocą komend \textit{AT}. Skonfigurowano takie parametry jak nazwa urządzenia oraz liczbę symboli na sekundę (ang. \textit{baud rate}). Do tego celu użyto mikrokontrolera \textit{Arduino Mega 2560} oraz płytki stykowej wraz z przewodami połączeniowymi. Konfiguracja modułu była jednorazową czynnością, dlatego zdecydowano się na platformę \textit{Arduino} ze względu na wyżej wspomnianą szybkość oraz prostotę obsługi.
   
 
 \begin{figure}[H]
@@ -71,7 +71,7 @@ Platforma została użyta do konfiguracji modułu Bluetooth za pomocą komend AT
 	\label{fig:arduino}	
 \end{figure}
 
-Ilustracja ~\ref{fig:arduino} obrazuje układ Arduino Mega 2560 wraz z płytką stykową oraz podłączonym modułem bluetooth. Dodatkowo układ wyposażono w diodę mającą na celu sygnalizację poprawności wgrywania komend.
+Ilustracja ~\ref{fig:arduino} obrazuje układ \textit{Arduino Mega 2560} wraz z płytką stykową oraz podłączonym modułem bluetooth. Dodatkowo układ wyposażono w diodę mającą na celu sygnalizację poprawności wgrywania komend.
 
 \begin{minipage}{\textwidth}
 	\begin{lstlisting}[label=arduinocode,caption=Kod programu umożliwiającego konifugrację modułu Bluetooth HM–10.]
@@ -103,7 +103,7 @@ void loop() {
 	\end{lstlisting}
 \end{minipage}
  
-Listing \ref{arduinocode} przedstawia kod programu zapewniającego komunikację między komputerem a~modułem Bluetooth przy użyciu mikrokontrolera \textit{Arduino Mega 2560}.  Za pomocą terminalu udostęnionego przez środowisko \textit{Arduino} możliwa jest komunikacja oraz konfiguracja modułu HM–10. Dodatkowo program został rozszerzony o zapalanie oraz gaszenie diody LED w celu sprawdzenia poprawności połączenia. Jeżeli przy użyciu wyżej wspomnianego terminala zostanie wysłana wartość 1, powinna zapalić się dioda. W przypadku wysłania wartości 0, dioda powinna zgasnąć.
+Listing \ref{arduinocode} przedstawia kod programu zapewniającego komunikację między komputerem a~modułem Bluetooth przy użyciu mikrokontrolera \textit{Arduino Mega 2560}.  Za pomocą terminalu udostęnionego przez środowisko \textit{Arduino} możliwa jest komunikacja oraz konfiguracja modułu \textit{HM–10}. Dodatkowo program został rozszerzony o zapalanie oraz gaszenie diody LED w celu sprawdzenia poprawności połączenia. Jeżeli przy użyciu wyżej wspomnianego terminala zostanie wysłana wartość 1, powinna zapalić się dioda. W przypadku wysłania wartości 0, dioda powinna zgasnąć.
 
 
  
