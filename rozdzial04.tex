@@ -9,7 +9,7 @@ W niniejszym rozdziale opisany został proces tworzenia robota minisumo. Wyróż
 	\label{fig:robot}	
 \end{figure}
 
-Zdjęcie ~\ref{fig:robot} przedstawia omawianego robota minisumo. W celu ukazania elektroniki ściągnięto nadwozie.
+Rysunek ~\ref{fig:robot} przedstawia omawianego robota minisumo. W celu ukazania elektroniki ściągnięto nadwozie.
 
 \newpage 
 
@@ -27,7 +27,9 @@ Konstrukcja nadwozia została zaprojektowana przy użyciu środowiska \textit{Au
 	\label{fig:body}	
 \end{figure}
 
-Na ilustracji ~\ref{fig:body} znajduje się projekt nadwozia robota. Ze względu na niewielką wytrzymałość plastikowego wydruku przywiązano dużą wagę do szerokości obudowy. Starano się, aby była możliwie jak najszersza, co skutkowało wzrostem trwałości całej konstrukcji. Dodatkowo front robota został wykonany ze stali, ponieważ w przypadku podważenia przeciwnika jest obszarem najbardziej podatnym na zniszczenia. 
+Na rysunku ~\ref{fig:body} przedstawiono projekt nadwozia robota. Ze względu na niewielką wytrzymałość plastikowego wydruku przywiązano dużą wagę do szerokości obudowy. Starano się, aby była możliwie jak najszersza, co skutkowało wzrostem trwałości całej konstrukcji. Dodatkowo front robota został wykonany ze stali, ponieważ w przypadku podważenia przeciwnika jest obszarem najbardziej podatnym na zniszczenia. 
+
+\newpage
 
 \subsection{Podwozie}
 Całość podwozia wykonana została ze stali ze względu na wytrzymałość oraz dużą masę, która przyczyniła się do znacznego obniżenia środka ciężkości konstrukcji.  Podobnie jak w przypadku nadwozia projekt został stworzony w środowisku \textit{Autodesk Inventor 2017}. Konstrukcja składa się z trzech płytek, z czego jedna zawiera ostrze od strugarki, wykonane z węglika spiekanego. Materiał ten cechuje się wysoką wytrzymałością oraz większą odpornością na kruszenie w porównaniu do zwykłej stali. 
@@ -39,7 +41,7 @@ Całość podwozia wykonana została ze stali ze względu na wytrzymałość ora
 	\label{fig:chassis}	
 \end{figure}
 
-Ilustracja ~\ref{fig:chassis} ukazuje wizualizację podwozia wraz z silnikami oraz kołami. Projekt wyeksportowano do formatu 2D, a następnie wykonano przy użyciu techniki wypalania laserem. 
+Rysunek ~\ref{fig:chassis} ukazuje wizualizację podwozia wraz z silnikami oraz kołami. Projekt wyeksportowano do formatu 2D, a następnie wykonano przy użyciu techniki wypalania laserem. 
 
 \subsection{Napęd}
 Jak wspomniano wcześniej, napęd robota składa się z dwóch kół, które sterowane są niezależnie. Ruch robota wzorowany jest na zasadzie działania czołgu. W przypadku skrętu, do jednego z silników dostarczana jest większa moc, co skutkuje wzrostem prędkości kątowej napędzanego koła. Z powodu różnicy prędkości kół robot zaczyna skręcać. Zdecydowano się na takie rozwiązanie ze względu na dozwoloną masę (większa ilość kół oraz silników znacząco by ją zwiększyła) oraz manewrowość – dzięki zastosowaniu omawianego rozwiązania możliwy jest obrót robota w miejscu (w przypadku, gdy koła kręcą się w przeciwne strony), dzięki czemu pojazd jest szybki oraz zwinny. 
@@ -51,7 +53,7 @@ Jak wspomniano wcześniej, napęd robota składa się z dwóch kół, które ste
 	\label{fig:drive}	
 \end{figure}
 
-Na zdjęciu ~\ref{fig:drive} przedstawiono napęd robota na który składają się dwa silniki oraz dwie felgi z oponami. Jako jednostkę napędową użyto silników \textit{Pololu HPCB} ze względu  na rozmiary, dopuszczalne napięcie zasilania oraz korzystny stosunek ceny do jakości. Felgi zostały wykonane przy pomocy wydruku 3D, a opony były gotowym komponentem wykonanym z poliuretanu.
+Na rysunku ~\ref{fig:drive} przedstawiono napęd robota na który składają się dwa silniki oraz dwie felgi z oponami. Jako jednostkę napędową użyto silników \textit{Pololu HPCB} ze względu  na rozmiary, dopuszczalne napięcie zasilania oraz korzystny stosunek ceny do jakości. Felgi zostały wykonane przy pomocy wydruku 3D, a opony były gotowym komponentem wykonanym z poliuretanu.
 
 \section{Elektronika}
 Projekt elektroniki robota, będącego tematem pracy dyplomowej, został stworzony przy użyciu darmowego środowiska \textit{KiCad}. Z początku płytki zostały wykonane własnoręcznie za pomocą metody termotransferu. Aczkolwiek z powodu dużej ilości przelotek, braku odpowiednich narzędzi oraz kilku błędów popełnionych na etapie projektowania, stwierdzono, iż lepszym rozwiązaniem będzie przeprojektowanie płytki oraz zlecenie wydruku firmie specjalizującej się w~tej dziedzinie. Nowa płytka była zdecydowanie trwalsza od poprzedniej wersji. Ponadto dzięki zastosowaniu soldermaski oraz cynowania HAL lutowanie elementów okazało się znacznie łatwiejsze.  
@@ -70,7 +72,7 @@ Docelowo robot posiada dwie płytki:
 	\label{fig:boards}	
 \end{figure}
 
-Na zdjęciu ~\ref{fig:boards} przedstawiono pierwszą  (wykonaną metodą termotransferu) oraz finalną (wykonaną przez firmę) wersję górnej płytki.  
+Na rysunku ~\ref{fig:boards} przedstawiono pierwszą  (wykonaną metodą termotransferu) oraz finalną (wykonaną przez firmę) wersję górnej płytki.  
 
 \subsection{Układ zasilania}
 Ze względu na ograniczone miejsce oraz dozwoloną masę za źródło zasilania posłużył akumulator litowo–polimerowy (Li–Pol) posiadający dwie cele oraz 400mAh pojemności. Bateria cechowała się wystarczającą wydajnością prądową, a pojemność pozwalała na stoczenie kilku pojedynków bez potrzeby ładowania. 

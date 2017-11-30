@@ -77,7 +77,7 @@ Panel powitalny jest pierwszym widokiem z którym użytkownik ma do czynienia po
 
 \newpage
 
-Po lewej stronie na obrazku \ref{fig:initial} przedstawiono omawiany panel, natomiast zdjęcie \ref{fig:scanner} po prawej stronie przedstawia listę dostępnych urządzeń.
+Po lewej stronie na rysunku \ref{fig:initial} przedstawiono omawiany panel, natomiast rysunek \ref{fig:scanner} po prawej stronie przedstawia listę dostępnych urządzeń.
 
 \begin{figure}[H]
 \centering
@@ -141,12 +141,12 @@ Panel główny odpowiedzialny jest tylko i wyłącznie za nawigację do poszczeg
 	\label{fig:mainview}	
 \end{figure}
 
-Na obrazku \ref{fig:mainview} przedstawiono wygląd panelu głównego aplikacji. Można zauważyć trzy przyciski \textit{Automatic}, \textit{Manual}, \textit{Pitstop}, które nawigują odpowiednio do panelu sterowania automatycznego, zdalnego oraz diagnostyki. 
+Na rysunku \ref{fig:mainview} przedstawiono wygląd panelu głównego aplikacji. Można zauważyć trzy przyciski \textit{Automatic}, \textit{Manual}, \textit{Pitstop}, które nawigują odpowiednio do panelu sterowania automatycznego, zdalnego oraz diagnostyki. 
 
 \subsection{Panel sterowania automatycznego}
 Panel sterowania automatycznego został stworzony w celu testowania algorytmów walki oraz konfigurowania robota do zawodów. Zaprojektowano go tak, aby był jak najbardziej intuicyjny w użytkowaniu. W górnej części widoku umiejscowione zostało zdjęcie formatu \textit{.gif} przedstawiające zachowanie robota na ringu dla danego algorytmu. Poniżej wizualizacji znajduje się krótki opis działania strategii, okno do ustawienia maksymalnej procentowej mocy silników oraz przełącznik, który określa czy robot powinien czekać na sygnał startowy (opcja wymagana podczas większości zawodów. Jej celem jest zapewnienie równego startu walczących ze sobą robotów). Na dole znajduje się przycisk \textit{START}, który po wciśnięciu wysyła do robota wiadomość z konfiguracją. Przerwanie walki następuje po wciśnięciu przycisku \textit{STOP} (który jest widoczny gdy wciśnięto przycisk \textit{START}).  W celu zmiany algorytmu należy przesunąć ekran od prawej do lewej lub na odwrót. Na samym dole znajdują się kropki odpowiadające każdemu z algorytmów, a najjaśniejsza z nich sygnalizuje, która strategia jest obecnie konfigurowana.
 
-Zdjęcie \ref{fig:automaticview} ukazuje wygląd opisywanego panelu sterowania automatycznego. 
+Rysunek \ref{fig:automaticview} ukazuje wygląd opisywanego panelu sterowania automatycznego. 
 
 \begin{figure}[H]
 	\centering
@@ -176,7 +176,7 @@ Panel sterowania zdalnego pozwala na zdalne sterowanie silnikami robota za pomoc
 Sterowanie akcelerometrem pozwala na zdalne sterowaniem ruchem robota poprzez odpowiednie przechylenie telefonem. Sam panel składa się z krótkiej instrukcji obsługi, informacji o mocy oraz kierunku jazdy oraz przycisku \textit{START}, który służy do uruchomienia omawianej funkcjonalności.
 
 
-Zdjęcie \ref{fig:accview} przedstawia wygląd omawianego panelu. Warto zauważyć, iż dla wygody został on zaprojektowany w orientacji poziomej.
+Rysunek \ref{fig:accview} przedstawia wygląd omawianego panelu. Warto zauważyć, iż dla wygody został on zaprojektowany w orientacji poziomej.
 
 \begin{figure}[H]
 	\centering
@@ -223,7 +223,7 @@ Sterowanie odbywa się za pomocą dwuwymiarowego drążka w postaci niebieskiego
 	\label{fig:joystickview}	
 \end{figure}
 
-Powyższe zdjęcie \ref{fig:joystickview} przedstawia wygląd panelu służącego do zdalnego sterowania robotem za pomocą dżojstiku.
+Powyższy rysunek \ref{fig:joystickview} przedstawia wygląd panelu służącego do zdalnego sterowania robotem za pomocą dżojstiku.
 
 \begin{figure}[H]
 	\centering
@@ -232,7 +232,7 @@ Powyższe zdjęcie \ref{fig:joystickview} przedstawia wygląd panelu służąceg
 	\label{fig:joystickdirections}	
 \end{figure}
 
-Ilustracja \ref{fig:joystickdirections} przedstawia zależność kierunku jazdy konstrukcji od kąta odchylenia drążka. Jak łatwo zauważyć, górna półkula odpowiedzialna jest za jazdę w przód, natomiast dolna w tył (półkule zostały oddzielone czerwoną kreską). Analogicznie lewa półkula pozwala na jazdę w~lewo, a prawa w prawo (półkule zostały oddzielone zieloną kreską). Dodatkowo w celu ułatwienia oszacowania żądanej mocy silników utworzono szary okrąg, który wyznacza granicę maksymalnego wychylenia drążka.
+Rysunek \ref{fig:joystickdirections} przedstawia zależność kierunku jazdy konstrukcji od kąta odchylenia drążka. Jak łatwo zauważyć, górna półkula odpowiedzialna jest za jazdę w przód, natomiast dolna w tył (półkule zostały oddzielone czerwoną kreską). Analogicznie lewa półkula pozwala na jazdę w~lewo, a prawa w prawo (półkule zostały oddzielone zieloną kreską). Dodatkowo w celu ułatwienia oszacowania żądanej mocy silników utworzono szary okrąg, który wyznacza granicę maksymalnego wychylenia drążka.
 
 Za zdalne sterowanie wirtualnym dżojstikiem odpowiedzialna jest klasa \textit{JoystickView}, (implementuje wygląd oraz położenie drążka) oraz klasa  \textit{JoystickViewController}, która nasłuchuje zmian położenia drążka oraz wysyła odpowiednią informację do robota. 
 
@@ -307,7 +307,7 @@ Rysunek \ref{fig:diagsensors} ukazuje widok diagnostyki czujników. Przedstawion
 	\label{fig:realsensors}	
 \end{figure}
 
-Natomiast na ilustracji \ref{fig:realsensors} przedstawiono działanie omawianego panelu. Po lewej stronie znajduje się robot z zasłoniętym lewym oraz prawym górnym czujnikiem (oznacza to wykrycie przeciwnika), a po prawej stronie telefon z wizualizacją działania aplikacji. Jak widać wiadomość nadesłana z robota została odpowiednio zinterpretowana, ponieważ pojawiła się lewa oraz prawa górna etykieta \textit{work}.
+Natomiast na rysunku \ref{fig:realsensors} przedstawiono działanie omawianego panelu. Po lewej stronie znajduje się robot z zasłoniętym lewym oraz prawym górnym czujnikiem (oznacza to wykrycie przeciwnika), a po prawej stronie telefon z wizualizacją działania aplikacji. Jak widać wiadomość nadesłana z robota została odpowiednio zinterpretowana, ponieważ pojawiła się lewa oraz prawa górna etykieta \textit{work}.
 
 \begin{minipage}{\textwidth}
 	\begin{lstlisting}[label=sensors,caption=Parsowanie wiadomości zawierającej stan czujników.]
@@ -321,12 +321,12 @@ func parseSensors(state: String, label: UILabel) {
 	\end{lstlisting}
 \end{minipage}
 
-Powyższy listing \ref{sensors} przedstawia funkcję \textit{parseSensors}, która ma na celu interpretację fragmentu wiadomości odnośnie stanu czujników nadesłanej przez robota. W przypadku otrzymania wartości \textit{1} oznaczającej wykrycie przeciwnika pojawia się etykieta \textit{work}. W innych przypadkach etykieta jest niewidoczna.
+Powyższy listing \ref{sensors} przedstawia funkcję \textit{parseSensors}, która ma na celu interpretację fragmentu wiadomości odnośnie stanu czujników nadesłanej przez robota. W przypadku otrzymania wartości 1 oznaczającej wykrycie przeciwnika pojawia się etykieta \textit{work}. W innych przypadkach etykieta jest niewidoczna.
  
 \subsubsection{Diagnostyka silników}
 Panel diagnostyki silników powstał w celu sprawdzenia zachowania poszczególnego motoru. Jego widok składa się z dwóch niezależnych suwaków, które służą do ustawienia odpowiedniej mocy oraz kierunku obrotu każdego z silników.
 
-Obrazek \ref{fig:motors} przedstawia wygląd omawianego panelu. Domyślnie suwaki są wyśrodkowane, co oznacza brak obrotu. Przesunięcie suwaka w lewo powoduje obrót silnika w tył, natomiast w~prawo obrót w przód.
+Rysunek \ref{fig:motors} przedstawia wygląd omawianego panelu. Domyślnie suwaki są wyśrodkowane, co oznacza brak obrotu. Przesunięcie suwaka w lewo powoduje obrót silnika w tył, natomiast w~prawo obrót w przód.
 
 \begin{figure}[H]
 	\centering
@@ -371,7 +371,7 @@ Panel czyszczenia opon jest uboższą wersją panelu diagnostyki silników. Skł
 
 \newpage
 
-Poniższe zdjęcie \ref{fig:tires} przedstawia wygląd panelu służącemu czyszczenia opon konstrukcji.
+Poniższy rysunek \ref{fig:tires} przedstawia wygląd panelu służącemu czyszczenia opon konstrukcji.
 
 \begin{figure}[H]
 	\centering
@@ -395,4 +395,9 @@ IBAction func changedState(_ sender: UISwitch) {
 }
 	\end{lstlisting}
 \end{minipage}
+
+\newpage
+ 
+\section{Kompilacja projektu}
+Kompilacja projektu składa się z 2 etapów – kompilacji programu uruchamianego w robocie oraz aplikacji mobilnej. W celu wgrania oprogramowania robota należy skompilować kod źródłowy w środowisku \textit{Eclipse}, a następnie utworzony plik binarny przesłać do procesora pojazdu przy użyciu środowiska \textit{STMStudio}. Rozwiązanie nie należy do najwygodniejszych, szczególnie na etapie testowania. Niestety jest to jedyny sposób, wynikający z błędów popełnionych na etapie projektowania, które zostaną opisane w podsumowaniu. Drugi etap jest mniej problematyczny, ponieważ nie wymaga integracji oprogramowania z niededykowanym urządzeniem.  Kompilacja kodu aplikacji mobilnej odbywa się w obrębie jednego narzędzia jakim jest \textit{Xcode}. 
 

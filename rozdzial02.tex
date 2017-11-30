@@ -8,20 +8,24 @@ Z racji, iż sercem robota jest procesor z rodziny \textit{STM}, wybór technolo
 
 Oprogramowanie zostało stworzone w środowisku \textit{Eclipse} z dodatkiem \textit{AC6} wspierającym platformę \textit{STM32}.
 
-\subsection{HAL}
-\textit{HAL} (ang. \textit{Hardware Abstraction Layer}) jest biblioteką będącą wysokopoziomowym interfejsem służącym do konfiguracji peryferiów mikrokontrolera. Zdecydowano się na wyżej wspomnianą bilbiotekę z powodu bardzo przejrzystej dokumentacji oraz łatwości użytkowania. Dodatkowo użyto środowiska \textit{CubeMX}, które udostępnia graficzny interfejs pozwalający na stosunkowo łatwą oraz intuicyjną konfigurację procesora oraz wygenerowanie projektu w języku C wraz z~użyciem bibliotek HAL.
+\subsection{Hardware Abstraction Layer}
+\textit{HAL} jest biblioteką będącą wysokopoziomowym interfejsem służącym do konfiguracji peryferiów mikrokontrolera. Zdecydowano się na wyżej wspomnianą bilbiotekę z powodu bardzo przejrzystej dokumentacji oraz łatwości użytkowania. Dodatkowo użyto środowiska \textit{CubeMX}, które udostępnia graficzny interfejs pozwalający na stosunkowo łatwą oraz intuicyjną konfigurację procesora oraz wygenerowanie projektu w języku C wraz z~użyciem bibliotek HAL.
+
+\newpage 
 
 Rysunek ~\ref{fig:cubemx} przedstawia konfigurację peryferiów użytego procesora w środowisku CubeMX.   
 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=0.85\linewidth]{pic02/cubemx}
+		\includegraphics[width=\linewidth, scale=0.95]{pic02/cubemx}
 	\caption{Konfiguracja peryferiów użytego procesora STM32F100C8T6B – LQFP48.}
 	\label{fig:cubemx}	
 \end{figure}
 
+\newpage
+
 \section{Swift}
-\textit{Swift} jest językiem natywnym (następcą języka \textit{Objective–C}) zaprezentowanym przez \textit{Apple Inc.} w 2014 roku. Wykorzystywany jest do tworzenia oprogramowania na platformy \textit{macOS, iOS} oraz \textit{watchOS}. W pracy dyplomowej użyto wersji języka 3.0, ponieważ była to najnowsza wersja wspierana przez docelowe urządzenie, którym był telefon iPhone 5.
+\textit{Swift} jest językiem natywnym (następcą języka \textit{Objective–C}) zaprezentowanym przez \textit{Apple Inc.} w 2014 roku \cite{Swiftdoc}. Wykorzystywany jest do tworzenia oprogramowania na platformy \textit{macOS, iOS} oraz \textit{watchOS}. W pracy dyplomowej użyto wersji języka 3.0, ponieważ była to najnowsza wersja wspierana przez docelowe urządzenie, którym był telefon iPhone 5.
 
 Środowiskiem użytym do tworzenia aplikacji mobilnej w technologii \textit{Swift} był \textit{Xcode}, którego dużym atutem jest występowanie graficznego interfejsu umożliwiającego tworzenie widoków aplikacji. Dzięki temu tworzenie aplikacji jest bardziej intuicyjne oraz pozwala na sprawne wprowadzanie zmian w tworzonych widokach \cite{Swift}.
 
@@ -30,7 +34,7 @@ Ilustracja ~\ref{fig:xcode} ukazuje środowisko Xcode wraz z widokami aplikacji 
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.75\linewidth]{pic02/xcode}
-	\caption{Środowisko Xcode.}
+	\caption{Okno środowiska Xcode.}
 	\label{fig:xcode}	
 \end{figure}
 
@@ -71,7 +75,11 @@ Platforma została użyta do konfiguracji modułu Bluetooth za pomocą komend \t
 	\label{fig:arduino}	
 \end{figure}
 
-Ilustracja ~\ref{fig:arduino} obrazuje układ \textit{Arduino Mega 2560} wraz z płytką stykową oraz podłączonym modułem bluetooth. Dodatkowo układ wyposażono w diodę mającą na celu sygnalizację poprawności wgrywania komend.
+Rysunek ~\ref{fig:arduino} obrazuje układ \textit{Arduino Mega 2560} wraz z płytką stykową oraz podłączonym modułem bluetooth. Dodatkowo układ wyposażono w diodę mającą na celu sygnalizację poprawności wgrywania komend.
+
+\newpage 
+
+Listing \ref{arduinocode} przedstawia kod programu zapewniającego komunikację między komputerem a~modułem Bluetooth przy użyciu mikrokontrolera \textit{Arduino Mega 2560}. 
 
 \begin{minipage}{\textwidth}
 	\begin{lstlisting}[label=arduinocode,caption=Kod programu umożliwiającego konifugrację modułu Bluetooth HM–10.]
@@ -103,7 +111,7 @@ void loop() {
 	\end{lstlisting}
 \end{minipage}
  
-Listing \ref{arduinocode} przedstawia kod programu zapewniającego komunikację między komputerem a~modułem Bluetooth przy użyciu mikrokontrolera \textit{Arduino Mega 2560}.  Za pomocą terminalu udostęnionego przez środowisko \textit{Arduino} możliwa jest komunikacja oraz konfiguracja modułu \textit{HM–10}. Dodatkowo program został rozszerzony o zapalanie oraz gaszenie diody LED w celu sprawdzenia poprawności połączenia. Jeżeli przy użyciu wyżej wspomnianego terminala zostanie wysłana wartość 1, powinna zapalić się dioda. W przypadku wysłania wartości 0, dioda powinna zgasnąć.
+Za pomocą terminalu udostęnionego przez środowisko \textit{Arduino} możliwa jest komunikacja oraz konfiguracja modułu \textit{HM–10}. Dodatkowo program został rozszerzony o zapalanie oraz gaszenie diody LED w celu sprawdzenia poprawności połączenia. Jeżeli przy użyciu wyżej wspomnianego terminala zostanie wysłana wartość 1, powinna zapalić się dioda. W przypadku wysłania wartości 0, dioda powinna zgasnąć.
 
 
  
