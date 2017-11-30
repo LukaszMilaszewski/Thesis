@@ -43,7 +43,7 @@ protocol BluetoothSerialDelegate {
 	\end{lstlisting}
 \end{minipage}
 
-Listing \ref{protocolcode} przedstawia zestaw metod zawartych w protokole komunikacyjnym.Poniżej przedstawiono przypadki w których zostają wywołane:
+Listing \ref{protocolcode} przedstawia zestaw metod zawartych w protokole komunikacyjnym. Poniżej przedstawiono przypadki w których zostają wywołane:
 
 \begin{itemize}
 \item \textit{serialDidChangeState} –  zmiana stanu modułu \textit{Bluetooth} (zostanie wyłączony lub włączony),
@@ -129,7 +129,7 @@ func serialDidChangeState() {
 	\end{lstlisting}
 \end{minipage}
 
-Listing \ref{scannerprotocol} przedstawia implementację metod zawartych w protokole \textit{BluetoothSerialDelegate} (omówionym w rozdziale 5.3) dla klasy \textit{ScannerViewController} odpowiedzialnej za wyświetlenie wykrytych urządzeń oraz poprawne połączenie z wybranym urządzeniem. Metoda \textit{serialDidDiscoverPeripheral} agreguje wykryte urządzenia, a następnie wysyła do widoku żądanie o wyświetleniu posortowanej listy ze znalezionymi urządzeniami. Funkcje \textit{serialDidFailToConnect} oraz \textit{serialDidDisconnect} odpowiedzialne są za przypadek, gdy nie udało się ustanowić połączenia z modułem \textit{Bluetooth} – wyświetlają przycisk dzięki któremu możliwa jest ponowna próba połączenia. Gdy aplikacja mobilna poprawnie ustanowiła połączenie z którymś z urządzeń uruchamiana jest funkcja \textit{serialIsReady}, której wynikiem jest przejście do panelu głównego.  Natomiast w przypadku rozłączenia wywoływana jest metoda \textit{serialDidChangeState} która wywołuje powrót do poprzedniego widoku jakim jest widok powitalny.
+Listing \ref{scannerprotocol} przedstawia implementację metod zawartych w protokole \textit{BluetoothSerialDelegate} (omówionym w rozdziale 5.3) dla klasy \textit{ScannerViewController} odpowiedzialnej za wyświetlenie wykrytych urządzeń oraz poprawne połączenie z wybranym urządzeniem. Metoda \textit{serialDidDiscoverPeripheral} agreguje wykryte urządzenia, a następnie wysyła do widoku żądanie o wyświetleniu posortowanej listy ze znalezionymi urządzeniami. Funkcje \textit{serialDidFailToConnect} oraz \textit{serialDidDisconnect} odpowiedzialne są za przypadek, gdy nie udało się ustanowić połączenia z modułem \textit{Bluetooth} – wyświetlają przycisk dzięki któremu możliwa jest ponowna próba połączenia. Gdy aplikacja mobilna poprawnie ustanowiła połączenie z którymś z urządzeń, uruchamiana jest funkcja \textit{serialIsReady}, której wynikiem jest przejście do panelu głównego.  Natomiast w przypadku rozłączenia wywoływana jest metoda \textit{serialDidChangeState}, która wywołuje powrót do poprzedniego widoku jakim jest widok powitalny.
 
 \subsection{Panel główny}
 Panel główny odpowiedzialny jest tylko i wyłącznie za nawigację do poszczególnych funkcjonalności aplikacji. Składa się z prostego kontrolera \textit{MainViewController}, który nawiguje do odpowiednich paneli w zależności od wciśniętego przycisku.
@@ -144,9 +144,9 @@ Panel główny odpowiedzialny jest tylko i wyłącznie za nawigację do poszczeg
 Na rysunku \ref{fig:mainview} przedstawiono wygląd panelu głównego aplikacji. Można zauważyć trzy przyciski \textit{Automatic}, \textit{Manual}, \textit{Pitstop}, które nawigują odpowiednio do panelu sterowania automatycznego, zdalnego oraz diagnostyki. 
 
 \subsection{Panel sterowania automatycznego}
-Panel sterowania automatycznego został stworzony w celu testowania algorytmów walki oraz konfigurowania robota do zawodów. Zaprojektowano go tak, aby był jak najbardziej intuicyjny w użytkowaniu. W górnej części widoku umiejscowione zostało zdjęcie formatu \textit{.gif} przedstawiające zachowanie robota na ringu dla danego algorytmu. Poniżej wizualizacji znajduje się krótki opis działania strategii, okno do ustawienia maksymalnej procentowej mocy silników oraz przełącznik, który określa czy robot powinien czekać na sygnał startowy (opcja wymagana podczas większości zawodów. Jej celem jest zapewnienie równego startu walczących ze sobą robotów). Na dole znajduje się przycisk \textit{START}, który po wciśnięciu wysyła do robota wiadomość z konfiguracją. Przerwanie walki następuje po wciśnięciu przycisku \textit{STOP} (który jest widoczny gdy wciśnięto przycisk \textit{START}).  W celu zmiany algorytmu należy przesunąć ekran od prawej do lewej lub na odwrót. Na samym dole znajdują się kropki odpowiadające każdemu z algorytmów, a najjaśniejsza z nich sygnalizuje, która strategia jest obecnie konfigurowana.
+Panel sterowania automatycznego został stworzony w celu testowania algorytmów walki oraz konfigurowania robota do zawodów. Zaprojektowano go tak, aby był jak najbardziej intuicyjny w użytkowaniu. W górnej części widoku umiejscowione zostało zdjęcie formatu \textit{.gif} przedstawiające zachowanie robota na ringu dla danego algorytmu. Poniżej wizualizacji znajduje się krótki opis działania strategii, okno do ustawienia maksymalnej procentowej mocy silników oraz przełącznik, który określa czy robot powinien czekać na sygnał startowy (opcja wymagana podczas większości zawodów. Jej celem jest zapewnienie równego startu walczących ze sobą robotów). Na dole znajduje się przycisk \textit{START}, który po wciśnięciu wysyła do robota wiadomość z konfiguracją. Przerwanie walki następuje po wciśnięciu przycisku \textit{STOP} (który jest widoczny po wciśnięciu przycisku \textit{START}).  W celu zmiany algorytmu należy przesunąć ekran od prawej do lewej lub na odwrót. Na samym dole znajdują się kropki odpowiadające każdemu z algorytmów, a najjaśniejsza z nich sygnalizuje, która strategia jest obecnie konfigurowana.
 
-Rysunek \ref{fig:automaticview} ukazuje wygląd opisywanego panelu sterowania automatycznego. 
+Rysunek \ref{fig:automaticview} ukazuje wygląd opisywanego panelu sterowania automatycznego (zamiast wizualizacji działania algorytmu walki wstawiono losowe zdjęcie). 
 
 \begin{figure}[H]
 	\centering
@@ -170,7 +170,7 @@ class Algorithm {
 Listing \ref{algorithmclass} przedstawia klasę \textit{Algorithm}, która zawiera pola typu tekstowego \textit{description}, \textit{videoName} oraz logicznego \textit{isCompetition} odpowiadające odpowiednio opisowi działania algorytmu walki, ścieżce zdjęcia \textit{.gif} obrazującego zachowanie robota oraz informacji odnośnie tego czy robot powinien oczekiwać na sygnał startowy.
  
 \subsection{Panel sterowania zdalnego}
-Panel sterowania zdalnego pozwala na zdalne sterowanie silnikami robota za pomocą akcelerometru bądź wirtualnego dżojstiku. podobnie jak panel główny, posiada  widok z dwoma przyciskami, który nawiguje do poszczególnych funkcjonalności:
+Panel sterowania zdalnego pozwala na zdalne sterowanie silnikami robota za pomocą akcelerometru bądź wirtualnego dżojstiku. Podobnie jak panel główny, posiada  widok z dwoma przyciskami, które nawigują do poszczególnych funkcjonalności:
  
 \subsubsection{Sterowanie akcelerometrem}
 Sterowanie akcelerometrem pozwala na zdalne sterowaniem ruchem robota poprzez odpowiednie przechylenie telefonem. Sam panel składa się z krótkiej instrukcji obsługi, informacji o mocy oraz kierunku jazdy oraz przycisku \textit{START}, który służy do uruchomienia omawianej funkcjonalności.
@@ -194,7 +194,7 @@ W celu realizacji wyżej wspomnianej funkcjonalności wykorzystano obrót urząd
 	\label{fig:axis}	
 \end{figure}
 
-Listing \ref{accfunc} przedstawia fragment kodu, należący do klasy \textit{GyroscopeViewController}, a dokładniej metodę \textit{startAcc}, która zostaje wywołana w momencie wciśnięcia przycisku \textit{START}. Linia 2 ustawia czas, co który będzie zczytywany pomiar wychylenia urządzenia (w tym przypadku pomiar dokonywany jest co 200 milisekund). Następne zostaje uruchomiony akcelerometr oraz przechwytywane są wartości obrotów wokół wspomnianych wcześniej osi. Ich wartości zawierają się w zakresie od -1 do 1. Na ich podstawie określany jest kierunek oraz prędkość, które zostaną wysłane do robota.
+Listing \ref{accfunc} przedstawia fragment kodu, należący do klasy \textit{GyroscopeViewController}, a dokładniej metodę \textit{startAcc}, która zostaje wywołana w momencie wciśnięcia przycisku \textit{START}. Linia 2 ustawia czas, co który będzie zczytywany pomiar wychylenia urządzenia (w tym przypadku pomiar dokonywany jest co 200 milisekund). Następne zostaje uruchomiony akcelerometr oraz przechwytywane są wartości obrotów wokół wspomnianych wcześniej osi. Ich wartości zawierają się w zakresie od -1 do 1. Na ich podstawie określane są kierunek oraz prędkość, które zostaną wysłane do robota.
 
 \begin{minipage}{\textwidth}
 	\begin{lstlisting}[label=accfunc,caption=Implementacja metody startAcc.]
@@ -232,7 +232,7 @@ Powyższy rysunek \ref{fig:joystickview} przedstawia wygląd panelu służącego
 	\label{fig:joystickdirections}	
 \end{figure}
 
-Rysunek \ref{fig:joystickdirections} przedstawia zależność kierunku jazdy konstrukcji od kąta odchylenia drążka. Jak łatwo zauważyć, górna półkula odpowiedzialna jest za jazdę w przód, natomiast dolna w tył (półkule zostały oddzielone czerwoną kreską). Analogicznie lewa półkula pozwala na jazdę w~lewo, a prawa w prawo (półkule zostały oddzielone zieloną kreską). Dodatkowo w celu ułatwienia oszacowania żądanej mocy silników utworzono szary okrąg, który wyznacza granicę maksymalnego wychylenia drążka.
+Rysunek \ref{fig:joystickdirections} przedstawia zależność kierunku jazdy konstrukcji od kąta odchylenia drążka. Jak łatwo zauważyć, górna półkula odpowiedzialna jest za jazdę w przód, natomiast dolna w~tył (półkule zostały oddzielone czerwoną kreską). Analogicznie lewa półkula pozwala na jazdę w~lewo, a prawa w prawo (półkule zostały oddzielone zieloną kreską). Dodatkowo w celu ułatwienia oszacowania żądanej mocy silników utworzono szary okrąg, który wyznacza granicę maksymalnego wychylenia drążka.
 
 Za zdalne sterowanie wirtualnym dżojstikiem odpowiedzialna jest klasa \textit{JoystickView}, (implementuje wygląd oraz położenie drążka) oraz klasa  \textit{JoystickViewController}, która nasłuchuje zmian położenia drążka oraz wysyła odpowiednią informację do robota. 
 
@@ -274,7 +274,7 @@ Powyższy listing \ref{joystickcontrol} przedstawia implementajcę najważniejsz
 
 \subsection{Panel diagnostyki}
 Panel diagnostyki powstał z myślą o sprawdzeniu poprawności działania poszczególnych komponentów robota. Niejednokrotnie zdarzało się, iż robot zachowywał się w nieoczekiwany sposób. Wtedy pojawiało się pytanie, czy wina leży po stronie oprogramowania, czy któryś z komponentów nie działa prawidłowo. Dzięki panelowi diagnostyki uzyskano możliwość szybszego zdiagnozowania problemu. 
-Stworzony widok składa się z trzech zakładek: . Nawigowanie między funkcjonalnościami odbywa się za pomocą kliknięcia jednej z zakładek widocznych u dołu ekranu. 
+Stworzony widok składa się z trzech zakładek:\textit{Sensors, Motors} oraz \textit{Tires} . Nawigowanie między funkcjonalnościami odbywa się za pomocą kliknięcia jednej z zakładek widocznych u dołu ekranu. 
 
 \begin{figure}[H]
 	\centering
@@ -326,7 +326,7 @@ Powyższy listing \ref{sensors} przedstawia funkcję \textit{parseSensors}, któ
 \subsubsection{Diagnostyka silników}
 Panel diagnostyki silników powstał w celu sprawdzenia zachowania poszczególnego motoru. Jego widok składa się z dwóch niezależnych suwaków, które służą do ustawienia odpowiedniej mocy oraz kierunku obrotu każdego z silników.
 
-Rysunek \ref{fig:motors} przedstawia wygląd omawianego panelu. Domyślnie suwaki są wyśrodkowane, co oznacza brak obrotu. Przesunięcie suwaka w lewo powoduje obrót silnika w tył, natomiast w~prawo obrót w przód.
+Rysunek \ref{fig:motors} przedstawia wygląd omawianego panelu. Domyślnie suwaki są wyśrodkowane, co oznacza brak obrotu. Przesunięcie suwaka w lewo powoduje ruch robota wstecz, natomiast w~prawo w przód.
 
 \begin{figure}[H]
 	\centering
@@ -367,7 +367,7 @@ IBAction func RightMotor(_ sender: UISlider) {
 \end{minipage}
 
 \subsubsection{Czyszczenie opon}
-Panel czyszczenia opon jest uboższą wersją panelu diagnostyki silników. Składa się z jednego przełącznika, który ustala moc obu silników na 20\% dostępnej mocy. Funkcjonalność powstała z myślą o czyszczeniu opon robota, które wykonane zostały z poliuretanu przez co bardzo szybko tracą przyczepność z powodu dużej podatności na zbieranie brudu.
+Panel czyszczenia opon jest uboższą wersją panelu diagnostyki silników. Składa się z jednego przełącznika, który ustala moc obu silników na 20\% dostępnej mocy. Funkcjonalność powstała z~myślą o czyszczeniu opon robota, które wykonane zostały z poliuretanu przez co bardzo szybko tracą przyczepność z powodu dużej podatności na zbieranie brudu.
 
 \newpage
 

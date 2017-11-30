@@ -53,10 +53,10 @@ Jak wspomniano wcześniej, napęd robota składa się z dwóch kół, które ste
 	\label{fig:drive}	
 \end{figure}
 
-Na rysunku ~\ref{fig:drive} przedstawiono napęd robota na który składają się dwa silniki oraz dwie felgi z oponami. Jako jednostkę napędową użyto silników \textit{Pololu HPCB} ze względu  na rozmiary, dopuszczalne napięcie zasilania oraz korzystny stosunek ceny do jakości. Felgi zostały wykonane przy pomocy wydruku 3D, a opony były gotowym komponentem wykonanym z poliuretanu.
+Na rysunku ~\ref{fig:drive} przedstawiono napęd robota na który składa się z dwóch silników oraz dwóch felg z oponami. Jako jednostkę napędową użyto silników \textit{Pololu HPCB} ze względu na rozmiary, dopuszczalne napięcie zasilania oraz korzystny stosunek ceny do jakości. Felgi zostały wykonane przy pomocy wydruku 3D, a opony były gotowym komponentem wykonanym z poliuretanu.
 
 \section{Elektronika}
-Projekt elektroniki robota, będącego tematem pracy dyplomowej, został stworzony przy użyciu darmowego środowiska \textit{KiCad}. Z początku płytki zostały wykonane własnoręcznie za pomocą metody termotransferu. Aczkolwiek z powodu dużej ilości przelotek, braku odpowiednich narzędzi oraz kilku błędów popełnionych na etapie projektowania, stwierdzono, iż lepszym rozwiązaniem będzie przeprojektowanie płytki oraz zlecenie wydruku firmie specjalizującej się w~tej dziedzinie. Nowa płytka była zdecydowanie trwalsza od poprzedniej wersji. Ponadto dzięki zastosowaniu soldermaski oraz cynowania HAL lutowanie elementów okazało się znacznie łatwiejsze.  
+Projekt elektroniki robota, będącego tematem pracy dyplomowej, został stworzony przy użyciu darmowego środowiska \textit{KiCad}. Z początku płytki zostały wykonane własnoręcznie za pomocą metody termotransferu. Aczkolwiek z powodu dużej ilości przelotek, braku odpowiednich narzędzi oraz kilku błędów popełnionych na etapie projektowania, stwierdzono, iż lepszym rozwiązaniem będzie przeprojektowanie płytki oraz zlecenie wydruku firmie specjalizującej się w~tej dziedzinie. Nowa płytka była zdecydowanie trwalsza od poprzedniej wersji. Ponadto, dzięki zastosowaniu soldermaski oraz cynowania HAL, lutowanie elementów okazało się znacznie łatwiejsze.  
 
 Docelowo robot posiada dwie płytki:
 \begin{itemize}
@@ -85,7 +85,7 @@ Poniżej wymieniono niezbędne funkcjonalności jakie musiała spełniać docelo
 \begin{itemize}
 \item przetwornik analogowo – cyfrowy (\textit{ang. ADC – analog to digital converter)} potrzebny do obsługi czujników końca ringu,
 \item odpowiednia ilość portów wejścia/wyjścia dla przycisków oraz diod,
-\item możliwość zmiany wypełnienia sygnału prądowego lub napięciowego (\textit{ang. PWM – Pulse–Width Modulation}) w celu odpowiedniego sterowania mocą silników,
+\item możliwość zmiany wypełnienia sygnału prądowego lub napięciowego (\textit{ang. Pulse–Width Modulation, PWM}) w celu odpowiedniego sterowania mocą silników,
 \item interfejs UART (\textit{ang. Universal Synchronous and Asynchronous Reciever and Transmitter}) niezbędny przy komunikacji z modułem Bluetooth,
 \item obsługa przerwań wykorzystywana w odbiorze wiadomości.
 \end{itemize}
@@ -96,7 +96,7 @@ Powyższe wymagania spełniał procesor \textit{STM32F100C8T6B - LQFP48}. Dodatk
 Konstrukcja została wyposażona w cztery czujniki \textit{SHARP Gp2y0d340k} wykrywające obecność przeciwnika do 40 centymetrów. Umieszczono je z przodu robota – dwa po bokach oraz dwa od frontu. Dodatkowo przy pługu znajdują się dwa czujniki sygnalizujące opuszczenie pola walki.
 
 \subsection{Sterownik silników}
-Jako sterownik posłużył dwukanałowy, 1.2 amperowy mostek H \textit{TB6612}. Wybór został podyktowany dostępnością oraz ceną. Aczkolwiek z czasem okazało się, iż omawiany układ jest bardzo awaryjny, szczególnie nie nadaje się do walki w zwarciu \cite{AVR}.
+Jako sterownik posłużył dwukanałowy, 1.2 amperowy mostek H \textit{TB6612}. Wybór został podyktowany dostępnością oraz ceną. Aczkolwiek z czasem okazało się, iż omawiany układ jest bardzo awaryjny, a w szczególności nie nadaje się do walki w zwarciu \cite{AVR}.
 
 \subsection{Schemat elektroniki}
 W celu zwiększenia czytelności schemat podzielono na moduły, które podpisano oraz obramowano niebieską linią. 
@@ -115,9 +115,9 @@ Poniżej na zdjęciu ~\ref{fig:electric_scheme} przedstawiono schemat zaprojekto
 Oprogramowanie sterujące robotem zostało napisane przy użyciu środowiska \textit{Eclipse}. Zawiera obsługę przychodzących/nadawanych wiadomości, zarządza sensoryką oraz motoryką konstrukcji. 
 
 \subsection{Transmisja danych}
-Transmisja danych opiera się na przesyłaniu ciągu liczb tak jak to opisano w 3 rozdziale. Przechwytywanie wiadomości odbywa się przy użyciu przerwania, które zostaje obsłużone w momencie zmiany stanu logicznego na pinie RX (połączonego z modułem Bluetooth) procesora. Następnie zostaje wywołana funkcja obsługująca przerwanie, przerywając tym samym aktualnie wykonywany kod. 
+Transmisja danych opiera się na przesyłaniu ciągu liczb tak jak to opisano w 3. rozdziale. Przechwytywanie wiadomości odbywa się przy użyciu przerwania, które zostaje obsłużone w momencie zmiany stanu logicznego na pinie RX (połączonego z modułem Bluetooth) procesora. Następnie zostaje wywołana funkcja obsługująca przerwanie, przerywając tym samym aktualnie wykonywany kod. 
 
-Listing \ref{interruptcode} przedstawia funkcję wywoływaną w momencie przerwania. Pierwszą czynnością było zapisanie odebranej wiadomości do zmiennej tablicowej \textit{received\_message},  Linia 6 przedstawia przypisanie pierwszej liczby otrzymanej wiadomości do zmiennej \textit{option} , która kolejno wykorzystywana jest w warunku \textit{switch} i w zależności od jej wartości ustawiane są odpowiednie flagi, będące zmiennymi globalnymi. Po zakończeniu działania opisywanej funkcji, program zostaje wznowiony w miejscu w którym został przerwany. 
+Listing \ref{interruptcode} przedstawia funkcję wywoływaną w momencie przerwania. Pierwszą czynnością było zapisanie odebranej wiadomości do zmiennej tablicowej \textit{received\_message}. Linia 6 przedstawia przypisanie pierwszej liczby otrzymanej wiadomości do zmiennej \textit{option}, która kolejno wykorzystywana jest w warunku \textit{switch}. W zależności od jej wartości ustawiane są odpowiednie flagi, będące zmiennymi globalnymi. Po zakończeniu działania opisywanej funkcji, program zostaje wznowiony w miejscu w którym został przerwany. 
 
 Działanie głównej funkcji programu \textit{main()} wykorzystuje pętle, które przy każdej iteracji sprawdzają stan wyżej wspomnianych flag. Na ich podstawie określana jest obecnie wykonywana funkcjonalność robota. Reszta wiadomości parsowana jest przy użyciu metody \textit{parseValueFromMessage}, a następnie interpretowana w odpowiedni sposób, zależny od obecnie wykonywanej funkcjonalności.
 
@@ -166,7 +166,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 \subsection{Sterowanie silnikami}
 Sterowanie mocą silników odbywa się za pomocą modyfikacji wypełnienia sygnału przesyłanego do sterowników silników. Zakres wartości mieści się w przedziale 0 – 100 i określa procentowy czas trwania stanu wysokiego impulsu w pojedyncznym cyklu generowanym przez \textit{timer}. 
 
-Poniższy listing \ref{pwmcode} przedstawia fragment kodu, który modyfikuje moc silników. \textit{TIM1} oznacza \textit{timer} generujący impuls, a \textit{CCR1} oraz \textit{CCR4} określają kanały, czyli docelowo silniki do których zostanie przesłany impuls.  Wartość wypełnienia zwracana jest przez metodę \textit{parseValueFromMessage}, która parsuje odpowiedni fragment wiadomości nadesłanej z aplikacji mobilnej. 
+Poniższy listing \ref{pwmcode} przedstawia fragment programu, który modyfikuje moc silników. \textit{TIM1} oznacza \textit{timer} generujący impuls, a \textit{CCR1} oraz \textit{CCR4} określają kanały, czyli docelowo silniki, do których zostanie przesłany impuls.  Wartość wypełnienia zwracana jest przez metodę \textit{parseValueFromMessage},~która parsuje odpowiedni fragment wiadomości nadesłanej z aplikacji mobilnej. 
 
 \begin{minipage}{\textwidth}
 	\begin{lstlisting}[label=pwmcode,caption=Sterowanie mocą silników.]
@@ -176,7 +176,7 @@ TIM1->CCR4 = parseValueFromMessage(5,6);
 \end{minipage}
 
 \subsection{Obsługa czujników}
-Obsługa stanu czujników została zrealizowana w bardzo prosty sposób wynikający z charakterystyki pracy sensorów. W przypadku czujników wykrywających przeciwnika sprawdzany jest stan pinu procesora do którego podłączono wyjście sensoru. Sam czujnik działa na zasadzie diody podczerwonej generującej sygnał, który zostaje odbity od przeciwnika i trafia do odbiornika. Następnie na wyjściu czujnika występuje stan wysoki (logiczna 1) w przypadku braku przeciwnika lub stan niski (logiczne 0), gdy wykryto przeciwnika.
+Obsługa stanu czujników została zrealizowana w bardzo prosty sposób wynikający z charakterystyki pracy sensorów. W przypadku czujników wykrywających przeciwnika sprawdzany jest stan pinu procesora, do którego podłączono wyjście sensoru. Sam czujnik działa na zasadzie diody podczerwonej generującej sygnał, który zostaje odbity od przeciwnika i trafia do odbiornika. Wyjściem czujnika jest stan wysoki w przypadku braku przeciwnika lub niski, gdy go wykryto.
 
 \begin{minipage}{\textwidth}
 	\begin{lstlisting}[label=sharpcode,caption=Obsługa czujników przeciwnika.]
@@ -194,4 +194,4 @@ if(!HAL_GPIO_ReadPin(GPIOB, sharp_r_Pin))
 	\end{lstlisting}
 \end{minipage}
 
-Listing \ref{sharpcode} przedstawia kod, który sprawdza stan wyjścia czujników, a następnie w przypadku wykrycia przeciwnika zmienia wartość odpowiednych pól wiadomości, która zostanie przesłana do aplikacji mobilnej. 
+Na listingu \ref{sharpcode} przedstawiano zmianę wartości odpowiednich pól wiadomości w zależności od stanu wyjścia czujników. Wiadomość ta zostaje następnie wysłana do aplikacji mobilnej. 
